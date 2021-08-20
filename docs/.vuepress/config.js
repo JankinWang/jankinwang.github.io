@@ -1,7 +1,7 @@
 module.exports = {
   title: "JankinWang",
   description: "编程永远不止步",
-  dest: "./dist/",
+  dest: "./dist/docs/",
 
   themeConfig: {
     logo: "/assets/img/logo.gif",
