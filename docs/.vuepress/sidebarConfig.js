@@ -30,12 +30,14 @@ function makeDirConfig(topDirName) {
       sidebarConfig[SubDirName] = makeSidebar(path.resolve(docsDir, `${topDirName}/${subDir.name}/`));
     }
   }
+
+  topDir.closeSync()
 }
 
 /**
  * 为指定目录生成侧边栏配置
  *
- * @param {String} dirname
+ * @param {String} dirname 目录绝对路径
  * @return {Array} 
  */
 function makeSidebar(dirname) {
@@ -47,14 +49,33 @@ function makeSidebar(dirname) {
     if (file === null) break;
 
     const [name, ext] = file.name.split('.');
-    if (name === 'README' || ext !== 'md') continue;
+    if (!file.isFile() || name === 'README' || ext !== 'md') continue;
 
     sideBar.push(name);
   }
 
   dirHandler.closeSync();
 
+  // 添加 readme.md
+  createReadme(dirname)
+
   return sideBar;
+}
+
+/**
+ * 在指定目录下添加 README.md
+ *
+ * @param {*} dirname 目录绝对路径
+ * @return {*} 
+ */
+function createReadme(dirname) {
+  const readmePath = path.resolve(dirname, './README.md')
+
+  // 如果存在直接返回
+  if (fs.existsSync(readmePath)) return true;
+
+  // 不存在创建
+  fs.appendFileSync(readmePath, '---\nsidebarDepth: 2\n---')
 }
 
 makeDirConfig('notes');
