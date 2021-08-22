@@ -6,7 +6,7 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "notes:pull": "git subtree pull --prefix=docs/notes https://gitee.com/jankinwang/notes.git master --squash",
-    "dist:deploy": "cd ./dist && git add . && git commit -m 'deploy' && git push github master"
+    "dist:auto-deploy": "npm run notes:pull && npm run docs:build && cd ./dist && git add . && git commit -m 'deploy' && git push github master"
   },
   "author": "me",
   "license": "ISC",
