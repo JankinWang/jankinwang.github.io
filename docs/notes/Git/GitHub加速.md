@@ -22,3 +22,8 @@
 
     直接将GitHub的域名后的部分拼接到这个域名后即可
 
+
+
+GitHub Hosts 订阅
+
+https://github.com/521xueweihan/GitHub520
