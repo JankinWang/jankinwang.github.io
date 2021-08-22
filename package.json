@@ -5,7 +5,8 @@
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "docs:deploy": "cd ./dist && git add . && git commit -m 'deploy' && git push github master"
+    "notes:pull": "git subtree pull --prefix=docs/notes https://gitee.com/jankinwang/notes.git master --squash",
+    "dist:deploy": "cd ./dist && git add . && git commit -m 'deploy' && git push github master"
   },
   "author": "me",
   "license": "ISC",
