@@ -1,64 +1,53 @@
 const fs = require('fs');
-const { dirname } = require('path');
 const path = require('path');
-
-const sidebarConfig = {};
-const notesNav = [];
-
-// 获取 notes 目录下的所有目录
 const docsDir = path.resolve(__dirname, '../');
 
-
 /**
- * 生成目录索引和文件侧边栏
+ * 生成目录导航和文件侧边栏
  *
  * @param {*} topDirName
  */
-function makeDirConfig(topDirName) {
-  const topDir = fs.opendirSync(path.resolve(docsDir, topDirName));
-
-  // 读取 topDir 中的所有目录
-  while(true) {
-    const subDir = topDir.readSync();
-
-    // 停止读取条件
-    if (subDir === null) break;
-
+function createNavAndSidbar(topDirName) {
+  const notesNav = [];
+  const sidebarConfig = {};
+  const topDir = dirForEach(path.resolve(docsDir, topDirName));
+  
+  for(subDir of topDir) {
     if (subDir.isDirectory()) {
-      const SubDirName = `/${topDirName}/${subDir.name}/`;
-      notesNav.push({text: subDir.name, link: SubDirName})
-      sidebarConfig[SubDirName] = makeSidebar(path.resolve(docsDir, `${topDirName}/${subDir.name}/`));
+      const SubDirName = `\/${topDirName}\/${subDir.name}\/`;
+
+      notesNav.push({ text: subDir.name, link: SubDirName });
+      sidebarConfig[SubDirName] = createSidebar(
+        path.join(docsDir, SubDirName)
+      );
     }
   }
-
-  topDir.closeSync()
+    
+  return {
+    notesNav,
+    sidebarConfig,
+  };
 }
 
 /**
  * 为指定目录生成侧边栏配置
  *
  * @param {String} dirname 目录绝对路径
- * @return {Array} 
+ * @return {Array}
  */
-function makeSidebar(dirname) {
-  const dirHandler = fs.opendirSync(dirname);
-
+function createSidebar(dirname) {
   let sideBar = [];
-  while (true) {
-    const file = dirHandler.readSync();
-    if (file === null) break;
+  const dirHandler = dirForEach(dirname);
 
+  for(file of dirHandler) {
     const [name, ext] = file.name.split('.');
-    if (!file.isFile() || name === 'README' || ext !== 'md') continue;
-
-    sideBar.push(name);
+    if (file.isFile() && ext === 'md' && name !== 'README') {
+      sideBar.push(name); // README.md 之外的 markdown 文件
+    }
   }
 
-  dirHandler.closeSync();
-
   // 添加 readme.md
-  createReadme(dirname)
-
+  createReadme(dirname);
   return sideBar;
 }
 
@@ -66,17 +55,32 @@ function makeSidebar(dirname) {
  * 在指定目录下添加 README.md
  *
  * @param {*} dirname 目录绝对路径
- * @return {*} 
+ * @return {*}
  */
 function createReadme(dirname) {
-  const readmePath = path.resolve(dirname, './README.md')
-
-  // 如果存在直接返回
-  if (fs.existsSync(readmePath)) return true;
-
-  // 不存在创建
-  fs.appendFileSync(readmePath, '---\nsidebarDepth: 2\n---')
+  const readmePath = path.resolve(dirname, './README.md');
+  if (!fs.existsSync(readmePath)) {
+    fs.appendFileSync(readmePath, '---\nsidebarDepth: 2\n---'); // README.md 不存则创建
+  }
 }
 
-makeDirConfig('notes');
-module.exports = {sidebarConfig, notesNav};
+/**
+ * 目录遍历器
+ *
+ * @param {*} dirname 绝对路径
+ */
+function* dirForEach(dirname) {
+  const dirHandler = fs.opendirSync(dirname);
+
+  while (true) {
+    const file = dirHandler.readSync();
+
+    if (file === null) break;
+    yield file;
+  }
+
+  dirHandler.closeSync();
+}
+
+
+module.exports = { sidebarConfig, notesNav } = createNavAndSidbar('notes');
