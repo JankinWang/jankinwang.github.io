@@ -1,9 +1,12 @@
 const {sidebarConfig, notesNav} = require('./sidebarConfig.js');
 
 module.exports = {
-  title: 'JankinWang',
-  description: '编程永远不止步',
+  title: 'Jankin',
+  description: '永远不止步',
   dest: './dist/docs/',
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.png' }]
+  ],
 
   locales: {
     '/': {
@@ -23,4 +26,8 @@ module.exports = {
     ],
     sidebar: sidebarConfig,
   },
+
+  plugins: [
+    { src: '@/plugins/vue-awesome-swiper', mode: 'client' },
+  ],
 };
