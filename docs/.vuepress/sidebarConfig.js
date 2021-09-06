@@ -22,7 +22,7 @@ function createNavAndSidbar(topDirName) {
     if (subDir.isDirectory()) {
       const subDirName = `\/${topDirName}\/${subDir.name}\/`;
       const theSidebar = createSidebar(path.join(docsDir, subDirName));
-      const theNavLink = `${subDirName}${sidebarConfig[subDirName][0] || ''}`;
+      const theNavLink = `${subDirName}${theSidebar[0] || ''}`;
 
       sidebarConfig[subDirName] = theSidebar
       notesNav.push({ text: subDir.name, link: theNavLink });
