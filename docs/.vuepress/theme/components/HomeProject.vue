@@ -53,7 +53,7 @@ export default {
             `${projectImgs}/saomadiancan/h03.png`,
           ],
           desc: '',
-          tags: ['php', 'javascript', 'Css', 'Html'],
+          tags: ['php', 'javascript', 'css', 'html'],
           links: [
             // LaoWangMianGuan 123456
             {
@@ -64,14 +64,14 @@ export default {
           repository: [],
         },
         {
-          title: '留学生监护平台',
+          title: '指南针监护网站',
           images: [
             `${projectImgs}/tutorship/01.png`,
             `${projectImgs}/tutorship/02.png`,
             `${projectImgs}/tutorship/03.png`,
           ],
           desc: '',
-          tags: ['php', 'javascript', 'Css', 'Html'],
+          tags: ['javascript', 'css', 'html', 'php'],
           links: [
             // LaoWangMianGuan 123456
             {
@@ -86,6 +86,29 @@ export default {
               label: '系统管理',
               link: 'http://compass.linx.cn/Admin/login/admin.html',
             },
+          ],
+          repository: [],
+        },
+        {
+          title: 'CodeStore-源码商城',
+          images: [
+            `${projectImgs}/codestore/01.png`,
+            `${projectImgs}/codestore/02.png`,
+            `${projectImgs}/codestore/03.png`,
+            `${projectImgs}/codestore/04.png`,
+          ],
+          desc: '',
+          tags: ['Vue', 'javascript'],
+          links: [
+            // LaoWangMianGuan 123456
+            {
+              label: 'PC浏览器',
+              link: 'https://sxrenwu.heartverse.net/',
+            },
+            {
+              label: '手机版',
+              link: 'http://csm.heartverse.net/',
+            }
           ],
           repository: [],
         },
@@ -154,6 +177,7 @@ export default {
       width: 100%;
       height: 160px;
       position: relative;
+      overflow: hidden;
 
       &::before {
         content: '查看图片';

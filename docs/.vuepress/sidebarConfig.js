@@ -1,5 +1,10 @@
 const fs = require('fs');
 const path = require('path');
+/** 
+ * 文档目录 其他目录都相对于此目录
+ * 受默认主题 sidebar 限制，只能对此目录下的一级目录有效
+ * 比如：/css/ 会覆盖 /css/sass/, 访问 /css/sass/ 实际打开的还是 /css/
+*/
 const docsDir = path.resolve(__dirname, '../');
 
 // 排除目录
@@ -8,10 +13,11 @@ const exclude = ['Linux', 'Docker', '数据结构'];
 /**
  * 生成目录导航和文件侧边栏
  *
- * @param {*} topDirName
+ * @param {String} topDirName docsDir下的目录 如 markdown
+ * @returns {Object} {navConfig,sidebarConfig}
  */
 function createNavAndSidbar(topDirName) {
-  const notesNav = [];
+  const navConfig = [];
   const sidebarConfig = {};
   const topDir = dirForEach(path.resolve(docsDir, topDirName));
 
@@ -25,12 +31,12 @@ function createNavAndSidbar(topDirName) {
       const theNavLink = `${subDirName}${theSidebar[0] || ''}`;
 
       sidebarConfig[subDirName] = theSidebar
-      notesNav.push({ text: subDir.name, link: theNavLink });
+      navConfig.push({ text: subDir.name, link: theNavLink });
     }
   }
 
   return {
-    notesNav,
+    navConfig,
     sidebarConfig,
   };
 }
@@ -90,4 +96,4 @@ function* dirForEach(dirname) {
   dirHandler.closeSync();
 }
 
-module.exports = { sidebarConfig, notesNav } = createNavAndSidbar('notes');
+module.exports = { createNavAndSidbar };

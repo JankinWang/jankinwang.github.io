@@ -1,12 +1,11 @@
-const {sidebarConfig, notesNav} = require('./sidebarConfig.js');
+const { createNavAndSidbar } = require('./sidebarConfig.js');
+const { sidebarConfig: notesSidebar, navConfig:notesNav } = createNavAndSidbar('notes');
 
 module.exports = {
   title: 'Jankin',
   description: '永远不止步',
   dest: './dist/docs/',
-  head: [
-    ['link', { rel: 'icon', href: '/favicon.png' }]
-  ],
+  head: [['link', { rel: 'icon', href: '/favicon.png' }]],
 
   locales: {
     '/': {
@@ -19,15 +18,14 @@ module.exports = {
     nav: [
       {
         text: '笔记',
-        items: notesNav
+        items: notesNav,
       },
 
+      { text: 'Gitee', link: 'https://gitee.com/JankinWang' },
       { text: 'Github', link: 'https://github.com/JankinWang' },
     ],
-    sidebar: sidebarConfig,
+    sidebar: notesSidebar,
   },
 
-  plugins: [
-    { src: '@/plugins/vue-awesome-swiper', mode: 'client' },
-  ],
+  plugins: [{ src: '@/plugins/vue-awesome-swiper', mode: 'client' }],
 };
