@@ -2,6 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const docsDir = path.resolve(__dirname, '../');
 
+// 排除目录
+const exclude = ['Linux', 'Docker', '数据结构'];
+
 /**
  * 生成目录导航和文件侧边栏
  *
@@ -11,18 +14,19 @@ function createNavAndSidbar(topDirName) {
   const notesNav = [];
   const sidebarConfig = {};
   const topDir = dirForEach(path.resolve(docsDir, topDirName));
-  
-  for(subDir of topDir) {
-    if (subDir.isDirectory()) {
-      const SubDirName = `\/${topDirName}\/${subDir.name}\/`;
 
-      notesNav.push({ text: subDir.name, link: SubDirName });
-      sidebarConfig[SubDirName] = createSidebar(
-        path.join(docsDir, SubDirName)
-      );
+  for (subDir of topDir) {
+    // 排除指定目录
+    if (exclude.includes(subDir.name)) continue;
+
+    if (subDir.isDirectory()) {
+      const subDirName = `\/${topDirName}\/${subDir.name}\/`;
+
+      notesNav.push({ text: subDir.name, link: subDirName });
+      sidebarConfig[subDirName] = createSidebar(path.join(docsDir, subDirName));
     }
   }
-    
+
   return {
     notesNav,
     sidebarConfig,
@@ -39,10 +43,12 @@ function createSidebar(dirname) {
   let sideBar = [];
   const dirHandler = dirForEach(dirname);
 
-  for(file of dirHandler) {
+  for (file of dirHandler) {
     const [name, ext] = file.name.split('.');
+
+    // README.md 之外的 markdown 文件
     if (file.isFile() && ext === 'md' && name !== 'README') {
-      sideBar.push(name); // README.md 之外的 markdown 文件
+      sideBar.push(name);
     }
   }
 
@@ -81,6 +87,5 @@ function* dirForEach(dirname) {
 
   dirHandler.closeSync();
 }
-
 
 module.exports = { sidebarConfig, notesNav } = createNavAndSidbar('notes');
