@@ -21,9 +21,11 @@ function createNavAndSidbar(topDirName) {
 
     if (subDir.isDirectory()) {
       const subDirName = `\/${topDirName}\/${subDir.name}\/`;
+      const theSidebar = createSidebar(path.join(docsDir, subDirName));
+      const theNavLink = `${subDirName}${sidebarConfig[subDirName][0] || ''}`;
 
-      notesNav.push({ text: subDir.name, link: subDirName });
-      sidebarConfig[subDirName] = createSidebar(path.join(docsDir, subDirName));
+      sidebarConfig[subDirName] = theSidebar
+      notesNav.push({ text: subDir.name, link: theNavLink });
     }
   }
 
@@ -40,7 +42,7 @@ function createNavAndSidbar(topDirName) {
  * @return {Array}
  */
 function createSidebar(dirname) {
-  let sideBar = [];
+  let sidebar = [];
   const dirHandler = dirForEach(dirname);
 
   for (file of dirHandler) {
@@ -48,13 +50,13 @@ function createSidebar(dirname) {
 
     // README.md 之外的 markdown 文件
     if (file.isFile() && ext === 'md' && name !== 'README') {
-      sideBar.push(name);
+      sidebar.push(name);
     }
   }
 
   // 添加 readme.md
   createReadme(dirname);
-  return sideBar;
+  return sidebar;
 }
 
 /**
