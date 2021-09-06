@@ -1,8 +1,8 @@
-# CentOS 下使用Docker 安装mysql,并实现远程访问
+# 安装MySQL
 
-### 安装过程参考 菜鸟教程
-
->   https://www.runoob.com/docker/docker-install-mysql.html
+>   [参考](https://www.runoob.com/docker/docker-install-mysql.html)
+>
+>   CentOS 下使用Docker 安装mysql,并实现远程访问
 
 
 
