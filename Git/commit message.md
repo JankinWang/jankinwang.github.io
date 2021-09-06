@@ -1,4 +1,4 @@
-# 如何书写 commit message
+# 书写 Commit Message
 
 
 

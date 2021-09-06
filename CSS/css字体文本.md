@@ -18,13 +18,12 @@ font: italic 900 small-caps 15px;
 ## 文本属性
 
 ```css
-text-indent /*缩进*/
-text-align
+text-indent /* 缩进 */
 line-height
-vertical-align
+text-align  /* 文本对齐 */
+text-align-last /* 对齐最后一行 */
+vertical-align /* 纵向文本对齐 */
 
-word-spacing 字间隔（中文），单词间隔（英文）
-letter-spacing 字间隔
 
 文本阴影
 text-shadow
@@ -35,16 +34,41 @@ text-transform
 文本修饰： 下划线、上划线、删除线、文本闪烁
 text-decoration
 
-空白字符的处理方式（如：pre不让浏览器合并多个空格，就像<pre>的效果）
+文本渲染效果：
+text-rendering
+
+word-spacing 字间隔（中文），单词间隔（英文）
+letter-spacing 字符间隔
+
+空白字符的处理方式（如：white-space:pre 不让浏览器合并多个空格，就像<pre>的效果）
 white-space
 
+换行和断字
+hyphens 
+
+控制软换行的方式
+word-break
+line-break
+
+文本换行（溢出换行）方式
+overflow-wrap
+
+制表符宽度
+tab-size: 4 /* 4个连续的空格 */
+
+设定书写模式
+writing-mode
+
 文本方向 (从左往右读 或 相反)
-direction
-unicode-bidi
+direction  /* css2 */
+unicode-bidi /* css2 */
+text-orientation
 
 ```
 
-## 文字超出显示省略号
+## 案例
+
+### 文字超出显示省略号
 
 ```css
 overflow: hidden;

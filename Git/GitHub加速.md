@@ -1,20 +1,40 @@
-## **获取GitHub官方CDN地址**
+# GitHub 访问
 
-### 用 https://www.ipaddress.com/ 获取ip，然后在 hosts 文件配置以下域名
+##  修改 hosts 文件 
 
->   其他cdn 查询工具 https://myssl.com/dns_check.html
+### 手动配置
 
-1.  [github.com](github.com)
-2.  [assets-cdn.github.com](assets-cdn.github.com)
-3.  [github.global.ssl.fastly.net](github.global.ssl.fastly.net)
+1.   获取以下GitHub域名ip地址
+
+     ip查询工具: https://www.ipaddress.com   https://myssl.com/dns_check.html
+
+     域名：
+
+     ​	github.com,
+
+     ​	assets-cdn.github.com
+
+     ​	github.global.ssl.fastly.net
+
+2.   修改 hosts 文件
+
+     ```shell
+     140.82.112.3 github.com
+     185.199.108.153 assets-cdn.github.com
+     185.199.110.153 godbasin.github.io
+     ```
+
+     
+
+3.   运行 ==ipconfig/flushdns== 手动刷新系统DNS缓存
 
 
 
-### 刷新 hosts
+### SwitchHosts
 
-运行 ==ipconfig/flushdns== 手动刷新系统DNS缓存。
+[SwitchHosts](https://swh.app/zh/) 是管理 hosts 文件的软件，可以更灵活的的管理hosts文件。
 
-
+另外还可以订阅远程别人分享的 hosts 设置，比如：https://github.com/521xueweihan/GitHub520
 
 ## GitHub 镜像
 
@@ -24,6 +44,3 @@
 
 
 
-GitHub Hosts 订阅
-
-https://github.com/521xueweihan/GitHub520

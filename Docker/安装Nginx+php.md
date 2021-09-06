@@ -1,3 +1,5 @@
+# 安装Nginx+php
+
 ## 运行环境
 
 #### VirtualBox + centos 7 配置好网卡，使其可以通过ip访问
