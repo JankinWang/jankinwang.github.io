@@ -7,8 +7,8 @@
     <div class="header">
       <h1>川流不息, code不止</h1>
 
-      <!-- 技术展板 -->
-      <div class="technology-stack">
+      <!-- 快速链接 -->
+      <div class="quick-link">
         <template v-for="item of technologyStack">
           <a :href="item.link" :key="item.title" target="_blank">
             <img :src="item.img" :alt="item.title" :title="item.title" />
@@ -30,7 +30,6 @@
       {{ data.footer }}
     </div>
     <!-- S footer -->
-
   </main>
 </template>
 
@@ -40,6 +39,7 @@ import HomeProject from './HomeProject.vue'
 
 export default {
   name: 'Home',
+  components: { HomeDemo, HomeProject },
 
   data() {
     const imgDir = '/assets/img/'
@@ -54,12 +54,12 @@ export default {
         {
           img: `${imgDir}html5.png`,
           title: 'html5',
-          link: '',
+          link: 'https://developer.mozilla.org/zh-CN/docs/Web/HTML',
         },
         {
           img: `${imgDir}css3.png`,
           title: 'css3',
-          link: '',
+          link: 'https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference#%E9%80%89%E6%8B%A9%E5%99%A8',
         },
         {
           img: `${imgDir}vue.png`,
@@ -80,8 +80,6 @@ export default {
     }
   },
 
-  components: { HomeDemo, HomeProject },
-
   computed: {
     data() {
       return this.$page.frontmatter
@@ -99,9 +97,9 @@ export default {
 
 <style lang="stylus">
 .home {
-  padding: $navbarHeight 0;
-  margin: 0px auto;
   display: block;
+  margin: 0px auto;
+  padding: $navbarHeight 0;
 
   .header {
     width: 100%;
@@ -114,29 +112,28 @@ export default {
     background: #f9f9f9;
 
     h1 {
+      position: relative;
+      top: 125px;
+      z-index: 0;
       margin: 0;
       color: #f9f9f9;
       font-size: 50px;
       text-align: center;
-      position: relative;
-      top: 125px;
-      z-index: 0;
       text-shadow: 0 -2px 0px #fff, 0 3px 6px #00000042;
     }
 
     &::before {
       content: ' ';
-      display: block;
-      width: 100%;
       position: absolute;
       top: 0;
       bottom: 0;
       z-index: 1;
-      // background: -webkit-radial-gradient(#000000b5, transparent);
-      // background: radial-gradient(#000000b5, transparent);
+      display: block;
+      width: 100%;
     }
 
-    .technology-stack {
+    // 快速链接
+    .quick-link {
       z-index: 2;
       width: 100%;
       bottom: 100px;
@@ -144,21 +141,21 @@ export default {
       position: absolute;
 
       a {
+        display: inline-block;
         width: 50px;
         height: 50px;
         margin: 0 15px;
         background: #fff;
         line-height: 50px;
         border-radius: 8px;
-        display: inline-block;
+        box-shadow: 0 0 2px 0 #4646462e;
         transition: all 0.2s ease-out;
         transition-delay: 0.1s;
-        box-shadow: 0 0 2px 0 #4646462e;
-      }
 
-      a:hover {
-        transform: translate(0, -6px);
-        box-shadow: 0 3px 2px 0 #00000042, 0 0 2px 0 #4646462e;
+        &:hover {
+          transform: translate(0, -6px);
+          box-shadow: 0 3px 2px 0 #00000042, 0 0 2px 0 #4646462e;
+        }
       }
 
       img {
