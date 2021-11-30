@@ -1,4 +1,4 @@
-# webpack 开始一个项目
+# webpack 创建项目
 
 ## 开始
 
@@ -13,8 +13,6 @@ npm init
 # 安装 webpack 和 webpack-cli
 npm install webpack webpack-cli --save-dev
 ```
-
-
 
 ### 添加 webpack.config.js 文件
 
@@ -32,7 +30,7 @@ module.exports = {
 };
 ```
 
-### npm scripts
+### 添加 npm scripts
 
 ```json
  "scripts": {
@@ -40,8 +38,6 @@ module.exports = {
     "watch": "webpack --watch --mode development"
  },
 ```
-
-
 
 ### 目录结构(基础)
 
@@ -144,9 +140,7 @@ npm install -D babel-loader @babel/core @babel/preset-env
 // babel.config.js
 
 module.exports = {
-  return {
-    presets: ["@babel/preset-env"],
-  };
+   presets: ["@babel/preset-env"],
 };
 ```
 
@@ -165,33 +159,71 @@ not dead
 
 ### Polyfill
 
+>   阐述 corejs2 corejs3 区别的文章》
+>
+>   [文章1](https://blog.csdn.net/hbiao68/article/details/104100731) [文章2](https://segmentfault.com/q/1010000018937075)
+>
+>   [Babel7 系列文章](https://segmentfault.com/a/1190000020237738)
+
+#### corejs2
+
 ```shell
-npm install -D @babel/plugin-transform-runtime
-npm install @babel/runtime
+npm install @babel/runtime-corejs2
 ```
 
 ```js
 // babel.config.js 修改如下
 
-module.exports = (api) => {
-  api.cache(true);
-  return {
-    plugins: ["@babel/plugin-transform-runtime"],
-    presets: [
-      [
-        "@babel/preset-env",
-        {
-          modules: false,
-          useBuiltIns: "usage",
-          corejs: "3"
-        },
-      ],
+module.exports = {
+  presets: [
+    [
+      '@babel/preset-env',
+      {
+        modules: false,
+        useBuiltIns: 'usage',
+        corejs: '2',
+      },
     ],
-  };
+  ],
 };
+
 ```
 
+#### corejs3
 
+>   https://segmentfault.com/a/1190000020237817
+
+```shell
+npm install babel-loader @babel/core @babel/preset-env @babel/plugin-transform-runtime -D
+npm install @babel/runtime-corejs3
+```
+
+```js
+// babel.config.js 修改如下
+
+module.exports = {
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": false,
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "corejs": {
+          "version": 3,
+          "proposals": true
+        },
+        "useESModules": true
+      }
+    ]
+  ]
+}
+```
 
 
 
