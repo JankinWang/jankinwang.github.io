@@ -1,5 +1,5 @@
-const { createNavAndSidbar } = require('./sidebarConfig.js');
-const { sidebarConfig: notesSidebar, navConfig:notesNav } = createNavAndSidbar('notes');
+const { createNavAndSidbar } = require('./myConfig.js')
+const { sidebarConfig: notesSidebar, navConfig: notesNav } = createNavAndSidbar('notes')
 
 module.exports = {
   title: 'Jankin',
@@ -28,4 +28,4 @@ module.exports = {
   },
 
   plugins: [{ src: '@/plugins/vue-awesome-swiper', mode: 'client' }],
-};
+}
