@@ -101,11 +101,11 @@ function* dirForEach(dirname) {
  * @returns {Set<string>}
  */
 function excludeList(mkPath) {
-  let excludeConf = []
+  let excludeConf = ['TypeScript']
   const configPath = path.resolve(mkPath, './exclude.config.js')
 
   if (fs.existsSync(configPath)) {
-    excludeConf = require(configPath)
+    excludeConf = require(configPath).concat(excludeConf)
   }
 
   return new Set(excludeConf)
