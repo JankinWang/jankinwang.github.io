@@ -4,17 +4,18 @@
 
 
 
-安装&初始化
+## 安装&初始化
 
 ```shell
 npm install eslint --save-dev
 
+# 初始化
 eslint --init
 ```
 
 
 
-.eslintrc.js
+## 配置（.eslintrc.js）
 
 ```js
 module.exports = {
@@ -59,7 +60,7 @@ npm install --save-dev --save-exact prettier
 npm install --save-dev eslint-config-prettier
 ```
 
-.eslintrc
+修改配置（.eslintrc.js）
 
 ```json
 {
