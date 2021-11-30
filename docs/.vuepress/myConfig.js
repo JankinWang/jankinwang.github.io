@@ -101,14 +101,11 @@ function* dirForEach(dirname) {
  * @returns {Set<string>}
  */
 function excludeList(mkPath) {
-  const excludeConf = []
+  let excludeConf = []
   const configPath = path.resolve(mkPath, './exclude.config.js')
 
   if (fs.existsSync(configPath)) {
-    console.log('文件 exclude.config.js 存在')
     excludeConf = require(configPath)
-  } else {
-    console.error('文件 exclude.config.js 不存在')
   }
 
   return new Set(excludeConf)
