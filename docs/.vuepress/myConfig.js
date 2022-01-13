@@ -22,9 +22,10 @@ function createNavAndSidbar(markdownDirName) {
   const exclude = excludeList(markdownPath)
 
   for (subDir of mkDirHandle) {
+    /**
+     * 目录存在且没被排除
+     **/
     if (subDir.isDirectory() && !exclude.has(subDir.name)) {
-      /**
-       * 目录存在且没被排除 */
       const subDirPath = `\/${markdownDirName}\/${subDir.name}\/`
       const theSidebar = createSidebar(path.join(docsDir, subDirPath))
       const theNavLink = `${subDirPath}${theSidebar[0] || ''}`
@@ -41,6 +42,12 @@ function createNavAndSidbar(markdownDirName) {
 module.exports = { createNavAndSidbar }
 
 /**
+ ******************************************
+ * 内部方法 ↓
+ *******************************************
+ */
+
+/**
  *
  * 为指定目录生成侧边栏配置
  * @param {String} dirname 目录绝对路径
@@ -52,7 +59,8 @@ function createSidebar(dirname) {
 
   for (file of dirHandler) {
     const [name, ext] = file.name.split('.')
-    // README.md 之外的 markdown 文件
+
+    // 读取README.md 之外的 markdown 文件
     if (file.isFile() && ext === 'md' && name !== 'README') {
       sidebar.push(name)
     }
@@ -72,7 +80,7 @@ function createSidebar(dirname) {
 function createReadme(dirname) {
   const readmePath = path.resolve(dirname, './README.md')
   if (!fs.existsSync(readmePath)) {
-    fs.appendFileSync(readmePath, '---\nsidebarDepth: 2\n---') // README.md 不存则创建
+    fs.appendFileSync(readmePath, '---\nsidebarDepth: 2\n---')
   }
 }
 
@@ -96,7 +104,7 @@ function* dirForEach(dirname) {
 
 /**
  *
- * 排除目录列表
+ * 返回排除目录列表
  * @param mkPath 存放 Markdown 文件的根目录
  * @returns {Set<string>}
  */
