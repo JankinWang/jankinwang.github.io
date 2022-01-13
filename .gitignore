@@ -1,3 +1,5 @@
 node_modules
 dist
 docs/notes
+test.sh
+update.sh
