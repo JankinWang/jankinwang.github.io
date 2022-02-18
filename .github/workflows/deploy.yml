@@ -1,0 +1,22 @@
+name: Deploy pages
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install and Build
+        run: |
+          npm install
+          npm run-script dist:auto-deploy
+      - name: Build and Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: dist/docs
+          BUILD_SCRIPT: npm install && npm run build
