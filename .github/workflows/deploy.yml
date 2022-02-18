@@ -25,3 +25,6 @@ jobs:
           BRANCH: gh-pages
           FOLDER: dist/docs
           BUILD_SCRIPT: npm install && npm run build
+      - name: Deploying to the server
+        run: |
+          bash ./deployServer.sh
