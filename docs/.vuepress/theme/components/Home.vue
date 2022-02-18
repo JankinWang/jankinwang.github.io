@@ -9,7 +9,7 @@
 
       <!-- 快速链接 -->
       <div class="quick-link">
-        <template v-for="item of technologyStack">
+        <template v-for="item of quickLinkList">
           <a :href="item.link" :key="item.title" target="_blank">
             <img :src="item.img" :alt="item.title" :title="item.title" />
           </a>
@@ -45,7 +45,7 @@ export default {
     const imgDir = '/assets/img/'
 
     return {
-      technologyStack: [
+      quickLinkList: [
         {
           img: `${imgDir}js.png`,
           title: 'javascript',
