@@ -1,8 +1,13 @@
 name: Deploy pages
 on:
+  workflow_dispatch
+  repository_dispatch:
+    types:
+      - run_workflow
   push:
     branches:
       - master
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
