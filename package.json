@@ -2,6 +2,7 @@
   "name": "myblog",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://jankinwang.github.io",
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
