@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>安装Nginx+php | Jankin</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.png">
+    <meta name="description" content="永远不止步">
+    
+    <link rel="preload" href="/assets/css/0.styles.ad8f3402.css" as="style"><link rel="preload" href="/assets/js/app.bc5c4fcd.js" as="script"><link rel="preload" href="/assets/js/2.ed050c36.js" as="script"><link rel="preload" href="/assets/js/27.60767af7.js" as="script"><link rel="prefetch" href="/assets/js/10.911fee8c.js"><link rel="prefetch" href="/assets/js/100.d7914dd6.js"><link rel="prefetch" href="/assets/js/101.ce36bc73.js"><link rel="prefetch" href="/assets/js/102.c2a729a6.js"><link rel="prefetch" href="/assets/js/103.e4837cac.js"><link rel="prefetch" href="/assets/js/104.5f0c634d.js"><link rel="prefetch" href="/assets/js/105.727799c7.js"><link rel="prefetch" href="/assets/js/106.b5f68347.js"><link rel="prefetch" href="/assets/js/107.edb8da08.js"><link rel="prefetch" href="/assets/js/108.a021ffc7.js"><link rel="prefetch" href="/assets/js/109.e79cb03a.js"><link rel="prefetch" href="/assets/js/11.5e3e9d90.js"><link rel="prefetch" href="/assets/js/110.cc772ee9.js"><link rel="prefetch" href="/assets/js/111.cf3ef84d.js"><link rel="prefetch" href="/assets/js/112.70a27521.js"><link rel="prefetch" href="/assets/js/113.4c95d737.js"><link rel="prefetch" href="/assets/js/114.20ef0188.js"><link rel="prefetch" href="/assets/js/115.094b6403.js"><link rel="prefetch" href="/assets/js/116.47009bcd.js"><link rel="prefetch" href="/assets/js/12.4bf856b0.js"><link rel="prefetch" href="/assets/js/13.b3f69ac4.js"><link rel="prefetch" href="/assets/js/14.69a092fd.js"><link rel="prefetch" href="/assets/js/15.e6dbb4b0.js"><link rel="prefetch" href="/assets/js/16.4af40172.js"><link rel="prefetch" href="/assets/js/17.635bcb3e.js"><link rel="prefetch" href="/assets/js/18.0c722356.js"><link rel="prefetch" href="/assets/js/19.a5395ba3.js"><link rel="prefetch" href="/assets/js/20.2993df03.js"><link rel="prefetch" href="/assets/js/21.df80cbd6.js"><link rel="prefetch" href="/assets/js/22.7bdac56a.js"><link rel="prefetch" href="/assets/js/23.f29bd583.js"><link rel="prefetch" href="/assets/js/24.0c26cacd.js"><link rel="prefetch" href="/assets/js/25.45b0fdeb.js"><link rel="prefetch" href="/assets/js/26.5a31944a.js"><link rel="prefetch" href="/assets/js/28.31ec3ba0.js"><link rel="prefetch" href="/assets/js/29.6ba5d940.js"><link rel="prefetch" href="/assets/js/3.160fbe9f.js"><link rel="prefetch" href="/assets/js/30.23d87ba8.js"><link rel="prefetch" href="/assets/js/31.aaec1fcb.js"><link rel="prefetch" href="/assets/js/32.907c5f16.js"><link rel="prefetch" href="/assets/js/33.2598d5f3.js"><link rel="prefetch" href="/assets/js/34.a2630726.js"><link rel="prefetch" href="/assets/js/35.f78a1b04.js"><link rel="prefetch" href="/assets/js/36.f8b1bfd7.js"><link rel="prefetch" href="/assets/js/37.cd266792.js"><link rel="prefetch" href="/assets/js/38.0ad0a886.js"><link rel="prefetch" href="/assets/js/39.bb0dad24.js"><link rel="prefetch" href="/assets/js/4.c01d6a06.js"><link rel="prefetch" href="/assets/js/40.a717f900.js"><link rel="prefetch" href="/assets/js/41.1c7faaf4.js"><link rel="prefetch" href="/assets/js/42.a6c700ff.js"><link rel="prefetch" href="/assets/js/43.4d9356ae.js"><link rel="prefetch" href="/assets/js/44.52e60422.js"><link rel="prefetch" href="/assets/js/45.7b53dc11.js"><link rel="prefetch" href="/assets/js/46.98f47220.js"><link rel="prefetch" href="/assets/js/47.26b199fd.js"><link rel="prefetch" href="/assets/js/48.7ce3f7ec.js"><link rel="prefetch" href="/assets/js/49.9c427a43.js"><link rel="prefetch" href="/assets/js/5.bc53fba0.js"><link rel="prefetch" href="/assets/js/50.f8ef0190.js"><link rel="prefetch" href="/assets/js/51.18fa98bf.js"><link rel="prefetch" href="/assets/js/52.59e87d60.js"><link rel="prefetch" href="/assets/js/53.05892769.js"><link rel="prefetch" href="/assets/js/54.60024f69.js"><link rel="prefetch" href="/assets/js/55.27d04ddb.js"><link rel="prefetch" href="/assets/js/56.3c43eaf4.js"><link rel="prefetch" href="/assets/js/57.b2f46c47.js"><link rel="prefetch" href="/assets/js/58.6f7dcb8e.js"><link rel="prefetch" href="/assets/js/59.9a88ff96.js"><link rel="prefetch" href="/assets/js/6.1ec25c0d.js"><link rel="prefetch" href="/assets/js/60.e4bfc47b.js"><link rel="prefetch" href="/assets/js/61.a1729124.js"><link rel="prefetch" href="/assets/js/62.354ac8da.js"><link rel="prefetch" href="/assets/js/63.43b6a63c.js"><link rel="prefetch" href="/assets/js/64.60b4908e.js"><link rel="prefetch" href="/assets/js/65.1acd197d.js"><link rel="prefetch" href="/assets/js/66.60c16db3.js"><link rel="prefetch" href="/assets/js/67.3810679b.js"><link rel="prefetch" href="/assets/js/68.0d58baf1.js"><link rel="prefetch" href="/assets/js/69.6813b22e.js"><link rel="prefetch" href="/assets/js/7.4cceb720.js"><link rel="prefetch" href="/assets/js/70.7c4e3012.js"><link rel="prefetch" href="/assets/js/71.b2d845f6.js"><link rel="prefetch" href="/assets/js/72.337ddfb8.js"><link rel="prefetch" href="/assets/js/73.724f90de.js"><link rel="prefetch" href="/assets/js/74.5cb7011d.js"><link rel="prefetch" href="/assets/js/75.52d8bebe.js"><link rel="prefetch" href="/assets/js/76.dd1c5f04.js"><link rel="prefetch" href="/assets/js/77.1dbf0759.js"><link rel="prefetch" href="/assets/js/78.e53ad7aa.js"><link rel="prefetch" href="/assets/js/79.325f3ecb.js"><link rel="prefetch" href="/assets/js/8.5938f0f3.js"><link rel="prefetch" href="/assets/js/80.f9c40ed2.js"><link rel="prefetch" href="/assets/js/81.71323674.js"><link rel="prefetch" href="/assets/js/82.c8861b95.js"><link rel="prefetch" href="/assets/js/83.1f13f1f7.js"><link rel="prefetch" href="/assets/js/84.c0deb073.js"><link rel="prefetch" href="/assets/js/85.f7682f47.js"><link rel="prefetch" href="/assets/js/86.69c468cc.js"><link rel="prefetch" href="/assets/js/87.16e63827.js"><link rel="prefetch" href="/assets/js/88.ae2f9e8a.js"><link rel="prefetch" href="/assets/js/89.035e8da0.js"><link rel="prefetch" href="/assets/js/9.a4956116.js"><link rel="prefetch" href="/assets/js/90.2006698f.js"><link rel="prefetch" href="/assets/js/91.7c4e3892.js"><link rel="prefetch" href="/assets/js/92.6f174fc0.js"><link rel="prefetch" href="/assets/js/93.8031f7e7.js"><link rel="prefetch" href="/assets/js/94.96b58d0d.js"><link rel="prefetch" href="/assets/js/95.7d536eff.js"><link rel="prefetch" href="/assets/js/96.0682d5e7.js"><link rel="prefetch" href="/assets/js/97.b4732b1c.js"><link rel="prefetch" href="/assets/js/98.ef97c75e.js"><link rel="prefetch" href="/assets/js/99.3ddd42ed.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ad8f3402.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/logo.gif" alt="Jankin" class="logo"> <span class="site-name can-hide">Jankin</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="笔记" class="dropdown-title"><span class="title">笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="笔记" class="mobile-dropdown-title"><span class="title">笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/网站推荐/编程相关.html" class="nav-link">
+  网站推荐
+</a></li><li class="dropdown-item"><!----> <a href="/notes/前端开发/ESLint.html" class="nav-link">
+  前端开发
+</a></li><li class="dropdown-item"><!----> <a href="/notes/uniapp/uniapp 注册分享.html" class="nav-link">
+  uniapp
+</a></li><li class="dropdown-item"><!----> <a href="/notes/CSS/弹性盒子.html" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/notes/JavaScript/二进制数据.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Git/常用命令.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notes/网络/https.html" class="nav-link">
+  网络
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Html/html中的回流、重绘.html" class="nav-link">
+  Html
+</a></li></ul></div></div><div class="nav-item"><a href="https://gitee.com/JankinWang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/JankinWang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="笔记" class="dropdown-title"><span class="title">笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="笔记" class="mobile-dropdown-title"><span class="title">笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/网站推荐/编程相关.html" class="nav-link">
+  网站推荐
+</a></li><li class="dropdown-item"><!----> <a href="/notes/前端开发/ESLint.html" class="nav-link">
+  前端开发
+</a></li><li class="dropdown-item"><!----> <a href="/notes/uniapp/uniapp 注册分享.html" class="nav-link">
+  uniapp
+</a></li><li class="dropdown-item"><!----> <a href="/notes/CSS/弹性盒子.html" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/notes/JavaScript/二进制数据.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Git/常用命令.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notes/网络/https.html" class="nav-link">
+  网络
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Html/html中的回流、重绘.html" class="nav-link">
+  Html
+</a></li></ul></div></div><div class="nav-item"><a href="https://gitee.com/JankinWang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/JankinWang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="安装nginx-php"><a href="#安装nginx-php" class="header-anchor">#</a> 安装Nginx+php</h1> <h2 id="运行环境"><a href="#运行环境" class="header-anchor">#</a> 运行环境</h2> <h4 id="virtualbox-centos-7-配置好网卡-使其可以通过ip访问"><a href="#virtualbox-centos-7-配置好网卡-使其可以通过ip访问" class="header-anchor">#</a> VirtualBox + centos 7 配置好网卡，使其可以通过ip访问</h4> <h4 id="docker-v20-10-3"><a href="#docker-v20-10-3" class="header-anchor">#</a> Docker v20.10.3</h4> <h4 id="nginx-v1-19-6"><a href="#nginx-v1-19-6" class="header-anchor">#</a> nginx v1.19.6</h4> <h4 id="php-7-4-8-fpm"><a href="#php-7-4-8-fpm" class="header-anchor">#</a> php 7.4.8-fpm</h4> <h2 id="安装php"><a href="#安装php" class="header-anchor">#</a> 安装php</h2> <h4 id="拉取镜像"><a href="#拉取镜像" class="header-anchor">#</a> 拉取镜像</h4> <div class="language-shell extra-class"><pre class="language-shell"><code>$ docker pull php:7.4.8-fpm
+</code></pre></div><h4 id="启动php容器"><a href="#启动php容器" class="header-anchor">#</a> 启动php容器</h4> <ul><li><p>首先在宿主机上创建号web应用目录 如：www/webroot, 用来存放项目文件</p></li> <li><p>运行PHP容器</p> <div class="language-shell extra-class"><pre class="language-shell"><code>$ docker run --name php7.4-fpm -v /www/webroot:/www  -d php:7.4.8-fpm
+<span class="token comment"># -v /www/webroot:/www 将宿主机的web应用目录映射到PHP容器的 /www</span>
+</code></pre></div></li></ul> <h4 id="启动nginx容器"><a href="#启动nginx容器" class="header-anchor">#</a> 启动Nginx容器</h4> <ul><li><p>创建 ~/nginx/conf/conf.d 目录（实际目录可自选）</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">mkdir</span> ~/nginx/conf/conf.d
+<span class="token comment"># 可以在这里添加以 .conf 为后缀的文件，来扩展和覆盖Nginx的配置 比如：配置虚拟主机</span>
+
+<span class="token comment"># 在这个目录下添加 test-php.conf 且内容如下：</span>
+server <span class="token punctuation">{</span>
+    listen       <span class="token number">80</span><span class="token punctuation">;</span>
+    server_name  localhost<span class="token punctuation">;</span>
+
+    location / <span class="token punctuation">{</span>
+        root   /usr/share/nginx/html<span class="token punctuation">;</span> <span class="token comment"># Nginx 容器的映射目录</span>
+        index  index.html index.htm index.php<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    error_page   <span class="token number">500</span> <span class="token number">502</span> <span class="token number">503</span> <span class="token number">504</span>  /50x.html<span class="token punctuation">;</span>
+    location <span class="token operator">=</span> /50x.html <span class="token punctuation">{</span>
+        root   /usr/share/nginx/html<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    location ~ <span class="token punctuation">\</span>.php$ <span class="token punctuation">{</span>
+    	root /www/ <span class="token comment"># php 容器的文件目录</span>
+        fastcgi_pass   php:9000<span class="token punctuation">;</span> <span class="token comment"># 告诉Nginx php-fpm 监听的端口</span>
+        fastcgi_index  index.php<span class="token punctuation">;</span>
+        fastcgi_param  SCRIPT_FILENAME  <span class="token variable">$document_root</span><span class="token variable">$fastcgi_script_name</span><span class="token punctuation">;</span> <span class="token comment"># 实际可能不是这样</span>
+        include        fastcgi_params<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li> <li><p>拉取nginx 镜像并启动容器</p> <div class="language-shell extra-class"><pre class="language-shell"><code>$ docker run --name runoob-php-nginx -p <span class="token number">8083</span>:80 -d <span class="token punctuation">\</span>
+    -v ~/nginx/www:/usr/share/nginx/html:ro <span class="token punctuation">\</span>
+    -v ~/nginx/conf/conf.d:/etc/nginx/conf.d:ro <span class="token punctuation">\</span>
+    --link myphp-fpm:php <span class="token punctuation">\</span>
+    nginx
+</code></pre></div><blockquote><ul><li><strong>-p 8080:80</strong>: 端口映射，把 <strong>nginx</strong> 中的 80 映射到本地的 8083 端口。</li> <li><strong>~/www/webroot</strong>: 是本地 html 文件的存储目录，/usr/share/nginx/html 是容器内 html 文件的存储目录。</li> <li><strong>~/nginx/conf/conf.d</strong>: 是本地 nginx 配置文件的存储目录，/etc/nginx/conf.d 是容器内 nginx 配置文件的存储目录。</li> <li><strong>--link myphp-fpm:php</strong>: 把 <strong>myphp-fpm</strong> 的网络并入 *<strong>nginx*</strong>，并通过修改 <strong>nginx</strong> 的 /etc/hosts，把域名 <strong>php</strong> 映射成 127.0.0.1，让 nginx 通过 php:9000 访问 php-fpm。</li></ul></blockquote></li></ul> <p>然后就可以 访问 /www/webroot 目录下的php文件了，如： 主机ip:8080/index.php</p> <h4 id="用thinkphp-6-框架测试一下环境是否能用"><a href="#用thinkphp-6-框架测试一下环境是否能用" class="header-anchor">#</a> 用thinkphp 6 框架测试一下环境是否能用</h4> <p><strong>配置虚拟主机</strong>比上边要复杂些</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># 宿主机的web目录为：/www/webroot/</span>
+<span class="token comment"># nginx容器将 /www/webroot/ 映射到 /usr/share/nginx/html/</span>
+<span class="token comment"># PHP容器将 /www/webroot/ 映射到 /www/</span>
+
+<span class="token comment"># 应此tp6框架对应的存放目录有三个：</span>
+<span class="token comment"># 宿主机/www/webroot/tp6/</span>
+<span class="token comment"># nginx容器 /usr/share/nginx/html/tp6/</span>
+<span class="token comment"># PHP容器 /www/tp6/</span>
+
+<span class="token comment"># 这里的三个目录是一样的，只是入口不同</span>
+
+server <span class="token punctuation">{</span>
+        listen        <span class="token number">80</span><span class="token punctuation">;</span>
+        server_name  www.tp6docker.com<span class="token punctuation">;</span>
+       
+        location / <span class="token punctuation">{</span>
+            root   /usr/share/nginx/html/tp6/public<span class="token punctuation">;</span> <span class="token comment"># nginx容器下的入口文件</span>
+            index index.php index.html error/index.html<span class="token punctuation">;</span>
+            error_page <span class="token number">400</span> /error/400.html<span class="token punctuation">;</span>
+            error_page <span class="token number">403</span> /error/403.html<span class="token punctuation">;</span>
+            error_page <span class="token number">404</span> /error/404.html<span class="token punctuation">;</span>
+            error_page <span class="token number">500</span> /error/500.html<span class="token punctuation">;</span>
+            error_page <span class="token number">501</span> /error/501.html<span class="token punctuation">;</span>
+            error_page <span class="token number">502</span> /error/502.html<span class="token punctuation">;</span>
+            error_page <span class="token number">503</span> /error/503.html<span class="token punctuation">;</span>
+            error_page <span class="token number">504</span> /error/504.html<span class="token punctuation">;</span>
+            error_page <span class="token number">505</span> /error/505.html<span class="token punctuation">;</span>
+            error_page <span class="token number">506</span> /error/506.html<span class="token punctuation">;</span>
+            error_page <span class="token number">507</span> /error/507.html<span class="token punctuation">;</span>
+            error_page <span class="token number">509</span> /error/509.html<span class="token punctuation">;</span>
+            error_page <span class="token number">510</span> /error/510.html<span class="token punctuation">;</span>
+            include /usr/share/nginx/html/tp6/public/nginx.htaccess<span class="token punctuation">;</span> <span class="token comment"># 伪静态文件</span>
+            autoindex  off<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        location ~ <span class="token punctuation">\</span>.php<span class="token punctuation">(</span>.*<span class="token punctuation">)</span>$ <span class="token punctuation">{</span>
+            root /www/tp6/public<span class="token punctuation">;</span> <span class="token comment"># PHP容器下的入口文件</span>
+            fastcgi_pass   php:9000<span class="token punctuation">;</span>
+            fastcgi_index  index.php<span class="token punctuation">;</span>
+            fastcgi_split_path_info  ^<span class="token punctuation">((</span>?U<span class="token punctuation">)</span>.+<span class="token punctuation">\</span>.php<span class="token punctuation">)</span><span class="token punctuation">(</span>/?.+<span class="token punctuation">)</span>$<span class="token punctuation">;</span>
+            fastcgi_param  SCRIPT_FILENAME  <span class="token variable">$document_root</span><span class="token variable">$fastcgi_script_name</span><span class="token punctuation">;</span>
+            fastcgi_param  PATH_INFO  <span class="token variable">$fastcgi_path_info</span><span class="token punctuation">;</span>
+            fastcgi_param  PATH_TRANSLATED  <span class="token variable">$document_root</span><span class="token variable">$fastcgi_path_info</span><span class="token punctuation">;</span>
+            include        fastcgi_params<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="现在访问-www-tp6docker-com"><a href="#现在访问-www-tp6docker-com" class="header-anchor">#</a> 现在访问 www.tp6docker.com</h4> <h4 id="安装php扩展"><a href="#安装php扩展" class="header-anchor">#</a> 安装php扩展</h4> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># 安装 pdo-mysql 扩展</span>
+docker <span class="token builtin class-name">exec</span> -ti php7.4-fpm /bin/bash <span class="token comment"># 首先进入容器</span>
+docker-php-ext-install pdo pdo_mysql <span class="token comment"># 安装 pdo_mysql 扩展</span>
+
+<span class="token comment"># 现在就可以链接数据库了</span>
+<span class="token comment"># 如果数据库没有用docker安装，这时数据库的 hostname 不能使 127.0.0.1，可以用服务器的公网ip</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.bc5c4fcd.js" defer></script><script src="/assets/js/2.ed050c36.js" defer></script><script src="/assets/js/27.60767af7.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Xdebug+vscode 远程调试 | Jankin</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.png">
+    <meta name="description" content="永远不止步">
+    
+    <link rel="preload" href="/assets/css/0.styles.ad8f3402.css" as="style"><link rel="preload" href="/assets/js/app.bc5c4fcd.js" as="script"><link rel="preload" href="/assets/js/2.ed050c36.js" as="script"><link rel="preload" href="/assets/js/73.724f90de.js" as="script"><link rel="prefetch" href="/assets/js/10.911fee8c.js"><link rel="prefetch" href="/assets/js/100.d7914dd6.js"><link rel="prefetch" href="/assets/js/101.ce36bc73.js"><link rel="prefetch" href="/assets/js/102.c2a729a6.js"><link rel="prefetch" href="/assets/js/103.e4837cac.js"><link rel="prefetch" href="/assets/js/104.5f0c634d.js"><link rel="prefetch" href="/assets/js/105.727799c7.js"><link rel="prefetch" href="/assets/js/106.b5f68347.js"><link rel="prefetch" href="/assets/js/107.edb8da08.js"><link rel="prefetch" href="/assets/js/108.a021ffc7.js"><link rel="prefetch" href="/assets/js/109.e79cb03a.js"><link rel="prefetch" href="/assets/js/11.5e3e9d90.js"><link rel="prefetch" href="/assets/js/110.cc772ee9.js"><link rel="prefetch" href="/assets/js/111.cf3ef84d.js"><link rel="prefetch" href="/assets/js/112.70a27521.js"><link rel="prefetch" href="/assets/js/113.4c95d737.js"><link rel="prefetch" href="/assets/js/114.20ef0188.js"><link rel="prefetch" href="/assets/js/115.094b6403.js"><link rel="prefetch" href="/assets/js/116.47009bcd.js"><link rel="prefetch" href="/assets/js/12.4bf856b0.js"><link rel="prefetch" href="/assets/js/13.b3f69ac4.js"><link rel="prefetch" href="/assets/js/14.69a092fd.js"><link rel="prefetch" href="/assets/js/15.e6dbb4b0.js"><link rel="prefetch" href="/assets/js/16.4af40172.js"><link rel="prefetch" href="/assets/js/17.635bcb3e.js"><link rel="prefetch" href="/assets/js/18.0c722356.js"><link rel="prefetch" href="/assets/js/19.a5395ba3.js"><link rel="prefetch" href="/assets/js/20.2993df03.js"><link rel="prefetch" href="/assets/js/21.df80cbd6.js"><link rel="prefetch" href="/assets/js/22.7bdac56a.js"><link rel="prefetch" href="/assets/js/23.f29bd583.js"><link rel="prefetch" href="/assets/js/24.0c26cacd.js"><link rel="prefetch" href="/assets/js/25.45b0fdeb.js"><link rel="prefetch" href="/assets/js/26.5a31944a.js"><link rel="prefetch" href="/assets/js/27.60767af7.js"><link rel="prefetch" href="/assets/js/28.31ec3ba0.js"><link rel="prefetch" href="/assets/js/29.6ba5d940.js"><link rel="prefetch" href="/assets/js/3.160fbe9f.js"><link rel="prefetch" href="/assets/js/30.23d87ba8.js"><link rel="prefetch" href="/assets/js/31.aaec1fcb.js"><link rel="prefetch" href="/assets/js/32.907c5f16.js"><link rel="prefetch" href="/assets/js/33.2598d5f3.js"><link rel="prefetch" href="/assets/js/34.a2630726.js"><link rel="prefetch" href="/assets/js/35.f78a1b04.js"><link rel="prefetch" href="/assets/js/36.f8b1bfd7.js"><link rel="prefetch" href="/assets/js/37.cd266792.js"><link rel="prefetch" href="/assets/js/38.0ad0a886.js"><link rel="prefetch" href="/assets/js/39.bb0dad24.js"><link rel="prefetch" href="/assets/js/4.c01d6a06.js"><link rel="prefetch" href="/assets/js/40.a717f900.js"><link rel="prefetch" href="/assets/js/41.1c7faaf4.js"><link rel="prefetch" href="/assets/js/42.a6c700ff.js"><link rel="prefetch" href="/assets/js/43.4d9356ae.js"><link rel="prefetch" href="/assets/js/44.52e60422.js"><link rel="prefetch" href="/assets/js/45.7b53dc11.js"><link rel="prefetch" href="/assets/js/46.98f47220.js"><link rel="prefetch" href="/assets/js/47.26b199fd.js"><link rel="prefetch" href="/assets/js/48.7ce3f7ec.js"><link rel="prefetch" href="/assets/js/49.9c427a43.js"><link rel="prefetch" href="/assets/js/5.bc53fba0.js"><link rel="prefetch" href="/assets/js/50.f8ef0190.js"><link rel="prefetch" href="/assets/js/51.18fa98bf.js"><link rel="prefetch" href="/assets/js/52.59e87d60.js"><link rel="prefetch" href="/assets/js/53.05892769.js"><link rel="prefetch" href="/assets/js/54.60024f69.js"><link rel="prefetch" href="/assets/js/55.27d04ddb.js"><link rel="prefetch" href="/assets/js/56.3c43eaf4.js"><link rel="prefetch" href="/assets/js/57.b2f46c47.js"><link rel="prefetch" href="/assets/js/58.6f7dcb8e.js"><link rel="prefetch" href="/assets/js/59.9a88ff96.js"><link rel="prefetch" href="/assets/js/6.1ec25c0d.js"><link rel="prefetch" href="/assets/js/60.e4bfc47b.js"><link rel="prefetch" href="/assets/js/61.a1729124.js"><link rel="prefetch" href="/assets/js/62.354ac8da.js"><link rel="prefetch" href="/assets/js/63.43b6a63c.js"><link rel="prefetch" href="/assets/js/64.60b4908e.js"><link rel="prefetch" href="/assets/js/65.1acd197d.js"><link rel="prefetch" href="/assets/js/66.60c16db3.js"><link rel="prefetch" href="/assets/js/67.3810679b.js"><link rel="prefetch" href="/assets/js/68.0d58baf1.js"><link rel="prefetch" href="/assets/js/69.6813b22e.js"><link rel="prefetch" href="/assets/js/7.4cceb720.js"><link rel="prefetch" href="/assets/js/70.7c4e3012.js"><link rel="prefetch" href="/assets/js/71.b2d845f6.js"><link rel="prefetch" href="/assets/js/72.337ddfb8.js"><link rel="prefetch" href="/assets/js/74.5cb7011d.js"><link rel="prefetch" href="/assets/js/75.52d8bebe.js"><link rel="prefetch" href="/assets/js/76.dd1c5f04.js"><link rel="prefetch" href="/assets/js/77.1dbf0759.js"><link rel="prefetch" href="/assets/js/78.e53ad7aa.js"><link rel="prefetch" href="/assets/js/79.325f3ecb.js"><link rel="prefetch" href="/assets/js/8.5938f0f3.js"><link rel="prefetch" href="/assets/js/80.f9c40ed2.js"><link rel="prefetch" href="/assets/js/81.71323674.js"><link rel="prefetch" href="/assets/js/82.c8861b95.js"><link rel="prefetch" href="/assets/js/83.1f13f1f7.js"><link rel="prefetch" href="/assets/js/84.c0deb073.js"><link rel="prefetch" href="/assets/js/85.f7682f47.js"><link rel="prefetch" href="/assets/js/86.69c468cc.js"><link rel="prefetch" href="/assets/js/87.16e63827.js"><link rel="prefetch" href="/assets/js/88.ae2f9e8a.js"><link rel="prefetch" href="/assets/js/89.035e8da0.js"><link rel="prefetch" href="/assets/js/9.a4956116.js"><link rel="prefetch" href="/assets/js/90.2006698f.js"><link rel="prefetch" href="/assets/js/91.7c4e3892.js"><link rel="prefetch" href="/assets/js/92.6f174fc0.js"><link rel="prefetch" href="/assets/js/93.8031f7e7.js"><link rel="prefetch" href="/assets/js/94.96b58d0d.js"><link rel="prefetch" href="/assets/js/95.7d536eff.js"><link rel="prefetch" href="/assets/js/96.0682d5e7.js"><link rel="prefetch" href="/assets/js/97.b4732b1c.js"><link rel="prefetch" href="/assets/js/98.ef97c75e.js"><link rel="prefetch" href="/assets/js/99.3ddd42ed.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ad8f3402.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/logo.gif" alt="Jankin" class="logo"> <span class="site-name can-hide">Jankin</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="笔记" class="dropdown-title"><span class="title">笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="笔记" class="mobile-dropdown-title"><span class="title">笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/网站推荐/编程相关.html" class="nav-link">
+  网站推荐
+</a></li><li class="dropdown-item"><!----> <a href="/notes/前端开发/ESLint.html" class="nav-link">
+  前端开发
+</a></li><li class="dropdown-item"><!----> <a href="/notes/uniapp/uniapp 注册分享.html" class="nav-link">
+  uniapp
+</a></li><li class="dropdown-item"><!----> <a href="/notes/CSS/弹性盒子.html" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/notes/JavaScript/二进制数据.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Git/常用命令.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notes/网络/https.html" class="nav-link">
+  网络
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Html/html中的回流、重绘.html" class="nav-link">
+  Html
+</a></li></ul></div></div><div class="nav-item"><a href="https://gitee.com/JankinWang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/JankinWang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="笔记" class="dropdown-title"><span class="title">笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="笔记" class="mobile-dropdown-title"><span class="title">笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/网站推荐/编程相关.html" class="nav-link">
+  网站推荐
+</a></li><li class="dropdown-item"><!----> <a href="/notes/前端开发/ESLint.html" class="nav-link">
+  前端开发
+</a></li><li class="dropdown-item"><!----> <a href="/notes/uniapp/uniapp 注册分享.html" class="nav-link">
+  uniapp
+</a></li><li class="dropdown-item"><!----> <a href="/notes/CSS/弹性盒子.html" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/notes/JavaScript/二进制数据.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Git/常用命令.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notes/网络/https.html" class="nav-link">
+  网络
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Html/html中的回流、重绘.html" class="nav-link">
+  Html
+</a></li></ul></div></div><div class="nav-item"><a href="https://gitee.com/JankinWang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/JankinWang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="xdebug-vscode-远程调试"><a href="#xdebug-vscode-远程调试" class="header-anchor">#</a> Xdebug+vscode 远程调试</h1> <h2 id="环境"><a href="#环境" class="header-anchor">#</a> 环境</h2> <ul><li><h5 id="php-7-2-26"><a href="#php-7-2-26" class="header-anchor">#</a> php 7.2.26</h5></li> <li><h5 id="xdebug-2-9-8"><a href="#xdebug-2-9-8" class="header-anchor">#</a> Xdebug 2.9.8</h5></li> <li><h5 id="centos-7-8-宝塔面板"><a href="#centos-7-8-宝塔面板" class="header-anchor">#</a> centos 7.8 + 宝塔面板</h5></li></ul> <h4 id="其他工具"><a href="#其他工具" class="header-anchor">#</a> 其他工具</h4> <p>vscode, Xshell</p> <h2 id="开始"><a href="#开始" class="header-anchor">#</a> 开始</h2> <h3 id="xdebug-安装、配置"><a href="#xdebug-安装、配置" class="header-anchor">#</a> Xdebug 安装、配置</h3> <blockquote><p>首先要确保远程端的Xdebug已启动，并可以正常使用。</p></blockquote> <h4 id="安装"><a href="#安装" class="header-anchor">#</a> 安装</h4> <blockquote><p>Linux 与 windows Xdeug安装方式不同，这里只关注 liunx 下的安装方式</p></blockquote> <p><strong>通过 pecl 安装</strong></p> <div class="language- extra-class"><pre class="language-text"><code>pecl install xdebug 
+
+// 如果安装了多个版本的php,
+// 应该去使用想安装xdeubg的PHP版本安装目录下的 /bin/pecl
+// 如： /www/server/php/72/bin/pecl
+</code></pre></div><p><strong>通过源码自己编译安装</strong></p> <ul><li><p>下载xdebug源码
+wget <a href="https://link.jianshu.com/?t=http://www.xdebug.org/files/xdebug-2.2.3.tgz" target="_blank" rel="noopener noreferrer">http://www.xdebug.org/files/xdebug-2.2.3.tgz<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>Github: https://github.com/xdebug/xdebug</p></li> <li><p>编译</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>tar xzf xdebug-2.2.3.tgz // 解压
+
+cd xdebug-2.2.3
+
+/usr/local/php/bin/phpize  //我用的是这个,不知道 用 /usr/bin/phpize 可不可以
+
+// 配置 php-config 路径 同样在php的 bin 目录下
+./configure --with-php-config=/usr/local/php/bin/php-config
+
+make // 执行完生成的文件夹在 ./modules/xdebug.so 
+
+make test
+// 这里可能会遇到一个问题需要在 php.ini 文件中取消禁用 proc_open 函数
+
+make install
+</code></pre></div><blockquote><p>参考：</p> <p><a href="https://www.jianshu.com/p/c469b8955cc5" target="_blank" rel="noopener noreferrer">编译安装php调试工具xdebug<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="https://www.php.cn/php-weizijiaocheng-196594.html" target="_blank" rel="noopener noreferrer">PHP怎么安装扩展？<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>https://segmentfault.com/a/1190000019775071</p> <p>https://my.oschina.net/bubifengyun/blog/753752</p></blockquote> <h4 id="配置"><a href="#配置" class="header-anchor">#</a> 配置</h4> <p>在 php.ini 中添加一下内容</p> <div class="language- extra-class"><pre class="language-text"><code>[Xdebug]
+zend_extension= &quot;/www/server/php/72/lib/php/extensions/no-debug-non-zts-20170718/xdebug.so&quot;
+
+xdebug.remote_enable=1
+xdebug.remote_handler=dbgp
+xdebug.remote_host=localhost
+xdebug.remote_port=9000
+xdebug.remote_autostart=1
+
+// 可酌情添加
+#xdebug.idekey=VSCODE
+#xdebug.profiler_enable=1
+#xdebug.default_enable=1
+
+</code></pre></div><h3 id="配置-vscode"><a href="#配置-vscode" class="header-anchor">#</a> 配置 VsCode</h3> <ul><li><p>安装 php debug 插件</p></li> <li><p>添加配置</p> <p>注：在插件自动生成的配置中 添加 pathMappings， 修改后台的配置如下</p> <div class="language- extra-class"><pre class="language-text"><code>{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    &quot;version&quot;: &quot;0.2.0&quot;,
+    &quot;configurations&quot;: [
+        {
+            &quot;name&quot;: &quot;Listen for XDebug&quot;,
+            &quot;type&quot;: &quot;php&quot;,
+            &quot;request&quot;: &quot;launch&quot;,
+            &quot;port&quot;: 9006, // 没有被占用的端口
+            
+            // 远程目录-&gt;本地目录
+            &quot;pathMappings&quot;: {
+                &quot;/www/wwwroot/xdebug.1949cn.top&quot;: &quot;${workspaceRoot}&quot;,
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Launch currently open script&quot;,
+            &quot;type&quot;: &quot;php&quot;,
+            &quot;request&quot;: &quot;launch&quot;,
+            &quot;program&quot;: &quot;${file}&quot;,
+            &quot;cwd&quot;: &quot;${fileDirname}&quot;,
+            &quot;port&quot;: 9000
+        }
+    ]
+}
+</code></pre></div></li></ul> <h3 id="建立-ssh-隧道"><a href="#建立-ssh-隧道" class="header-anchor">#</a> 建立 ssh 隧道</h3> <ul><li><p>确保能通过 ssh 连上服务器</p></li> <li><p>确保 xdebug 配置的端口已放行。阿里云、腾讯云需要将端口添加到安全组</p></li></ul> <h4 id="xshell-新建会话"><a href="#xshell-新建会话" class="header-anchor">#</a> Xshell 新建会话</h4> <p>我们新建一个会话，填好名称、主机信息。注意：勾选连接异常关闭时自动重新连接，间隔可自己设置，这里是60秒</p> <p><img src="https://raw.githubusercontent.com/JankinWang/PicGo/main/image-20201116171530067.png" alt="image-20201116171530067"></p> <h4 id="不分配终端"><a href="#不分配终端" class="header-anchor">#</a> 不分配终端</h4> <p>为安全起见，服务器上用于建立隧道的用户，可以被被设置为不允许通过Shell登录的。如果设置了，那我们需要设置Xshell在进行SHH连接时不分配终端。</p> <p><img src="https://raw.githubusercontent.com/JankinWang/PicGo/main/image-20201116171700647.png" alt="image-20201116171700647"></p> <h4 id="添加一个远程-r-隧道"><a href="#添加一个远程-r-隧道" class="header-anchor">#</a> 添加一个远程（R）隧道</h4> <p>我们添加一个远程（R）隧道，则将云服务器的9090端口，映射到localhost:9090端口，从而达到将云服务器9090端口的数据转发到本地xdebug对应的9090端口的目的。</p> <p><img src="https://raw.githubusercontent.com/JankinWang/PicGo/main/image-20201116172325070.png" alt="image-20201116172325070"></p> <h4 id="输入日志"><a href="#输入日志" class="header-anchor">#</a> 输入日志</h4> <p>为了能了解隧道的运行情况，我们设置Xshell输出隧道相关的日志。</p> <p><img src="https://raw.githubusercontent.com/JankinWang/PicGo/main/image-20201116172655894.png" alt="image-20201116172655894"></p> <blockquote><p>建立ssh隧道参考</p> <p>https://blog.csdn.net/weixin_41245990/article/details/107325629</p></blockquote></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.bc5c4fcd.js" defer></script><script src="/assets/js/2.ed050c36.js" defer></script><script src="/assets/js/73.724f90de.js" defer></script>
+  </body>
+</html>

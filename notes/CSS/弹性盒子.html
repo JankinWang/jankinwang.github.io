@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CSS弹性布局 flex | Jankin</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.png">
+    <meta name="description" content="永远不止步">
+    
+    <link rel="preload" href="/assets/css/0.styles.ad8f3402.css" as="style"><link rel="preload" href="/assets/js/app.bc5c4fcd.js" as="script"><link rel="preload" href="/assets/js/2.ed050c36.js" as="script"><link rel="preload" href="/assets/js/20.2993df03.js" as="script"><link rel="prefetch" href="/assets/js/10.911fee8c.js"><link rel="prefetch" href="/assets/js/100.d7914dd6.js"><link rel="prefetch" href="/assets/js/101.ce36bc73.js"><link rel="prefetch" href="/assets/js/102.c2a729a6.js"><link rel="prefetch" href="/assets/js/103.e4837cac.js"><link rel="prefetch" href="/assets/js/104.5f0c634d.js"><link rel="prefetch" href="/assets/js/105.727799c7.js"><link rel="prefetch" href="/assets/js/106.b5f68347.js"><link rel="prefetch" href="/assets/js/107.edb8da08.js"><link rel="prefetch" href="/assets/js/108.a021ffc7.js"><link rel="prefetch" href="/assets/js/109.e79cb03a.js"><link rel="prefetch" href="/assets/js/11.5e3e9d90.js"><link rel="prefetch" href="/assets/js/110.cc772ee9.js"><link rel="prefetch" href="/assets/js/111.cf3ef84d.js"><link rel="prefetch" href="/assets/js/112.70a27521.js"><link rel="prefetch" href="/assets/js/113.4c95d737.js"><link rel="prefetch" href="/assets/js/114.20ef0188.js"><link rel="prefetch" href="/assets/js/115.094b6403.js"><link rel="prefetch" href="/assets/js/116.47009bcd.js"><link rel="prefetch" href="/assets/js/12.4bf856b0.js"><link rel="prefetch" href="/assets/js/13.b3f69ac4.js"><link rel="prefetch" href="/assets/js/14.69a092fd.js"><link rel="prefetch" href="/assets/js/15.e6dbb4b0.js"><link rel="prefetch" href="/assets/js/16.4af40172.js"><link rel="prefetch" href="/assets/js/17.635bcb3e.js"><link rel="prefetch" href="/assets/js/18.0c722356.js"><link rel="prefetch" href="/assets/js/19.a5395ba3.js"><link rel="prefetch" href="/assets/js/21.df80cbd6.js"><link rel="prefetch" href="/assets/js/22.7bdac56a.js"><link rel="prefetch" href="/assets/js/23.f29bd583.js"><link rel="prefetch" href="/assets/js/24.0c26cacd.js"><link rel="prefetch" href="/assets/js/25.45b0fdeb.js"><link rel="prefetch" href="/assets/js/26.5a31944a.js"><link rel="prefetch" href="/assets/js/27.60767af7.js"><link rel="prefetch" href="/assets/js/28.31ec3ba0.js"><link rel="prefetch" href="/assets/js/29.6ba5d940.js"><link rel="prefetch" href="/assets/js/3.160fbe9f.js"><link rel="prefetch" href="/assets/js/30.23d87ba8.js"><link rel="prefetch" href="/assets/js/31.aaec1fcb.js"><link rel="prefetch" href="/assets/js/32.907c5f16.js"><link rel="prefetch" href="/assets/js/33.2598d5f3.js"><link rel="prefetch" href="/assets/js/34.a2630726.js"><link rel="prefetch" href="/assets/js/35.f78a1b04.js"><link rel="prefetch" href="/assets/js/36.f8b1bfd7.js"><link rel="prefetch" href="/assets/js/37.cd266792.js"><link rel="prefetch" href="/assets/js/38.0ad0a886.js"><link rel="prefetch" href="/assets/js/39.bb0dad24.js"><link rel="prefetch" href="/assets/js/4.c01d6a06.js"><link rel="prefetch" href="/assets/js/40.a717f900.js"><link rel="prefetch" href="/assets/js/41.1c7faaf4.js"><link rel="prefetch" href="/assets/js/42.a6c700ff.js"><link rel="prefetch" href="/assets/js/43.4d9356ae.js"><link rel="prefetch" href="/assets/js/44.52e60422.js"><link rel="prefetch" href="/assets/js/45.7b53dc11.js"><link rel="prefetch" href="/assets/js/46.98f47220.js"><link rel="prefetch" href="/assets/js/47.26b199fd.js"><link rel="prefetch" href="/assets/js/48.7ce3f7ec.js"><link rel="prefetch" href="/assets/js/49.9c427a43.js"><link rel="prefetch" href="/assets/js/5.bc53fba0.js"><link rel="prefetch" href="/assets/js/50.f8ef0190.js"><link rel="prefetch" href="/assets/js/51.18fa98bf.js"><link rel="prefetch" href="/assets/js/52.59e87d60.js"><link rel="prefetch" href="/assets/js/53.05892769.js"><link rel="prefetch" href="/assets/js/54.60024f69.js"><link rel="prefetch" href="/assets/js/55.27d04ddb.js"><link rel="prefetch" href="/assets/js/56.3c43eaf4.js"><link rel="prefetch" href="/assets/js/57.b2f46c47.js"><link rel="prefetch" href="/assets/js/58.6f7dcb8e.js"><link rel="prefetch" href="/assets/js/59.9a88ff96.js"><link rel="prefetch" href="/assets/js/6.1ec25c0d.js"><link rel="prefetch" href="/assets/js/60.e4bfc47b.js"><link rel="prefetch" href="/assets/js/61.a1729124.js"><link rel="prefetch" href="/assets/js/62.354ac8da.js"><link rel="prefetch" href="/assets/js/63.43b6a63c.js"><link rel="prefetch" href="/assets/js/64.60b4908e.js"><link rel="prefetch" href="/assets/js/65.1acd197d.js"><link rel="prefetch" href="/assets/js/66.60c16db3.js"><link rel="prefetch" href="/assets/js/67.3810679b.js"><link rel="prefetch" href="/assets/js/68.0d58baf1.js"><link rel="prefetch" href="/assets/js/69.6813b22e.js"><link rel="prefetch" href="/assets/js/7.4cceb720.js"><link rel="prefetch" href="/assets/js/70.7c4e3012.js"><link rel="prefetch" href="/assets/js/71.b2d845f6.js"><link rel="prefetch" href="/assets/js/72.337ddfb8.js"><link rel="prefetch" href="/assets/js/73.724f90de.js"><link rel="prefetch" href="/assets/js/74.5cb7011d.js"><link rel="prefetch" href="/assets/js/75.52d8bebe.js"><link rel="prefetch" href="/assets/js/76.dd1c5f04.js"><link rel="prefetch" href="/assets/js/77.1dbf0759.js"><link rel="prefetch" href="/assets/js/78.e53ad7aa.js"><link rel="prefetch" href="/assets/js/79.325f3ecb.js"><link rel="prefetch" href="/assets/js/8.5938f0f3.js"><link rel="prefetch" href="/assets/js/80.f9c40ed2.js"><link rel="prefetch" href="/assets/js/81.71323674.js"><link rel="prefetch" href="/assets/js/82.c8861b95.js"><link rel="prefetch" href="/assets/js/83.1f13f1f7.js"><link rel="prefetch" href="/assets/js/84.c0deb073.js"><link rel="prefetch" href="/assets/js/85.f7682f47.js"><link rel="prefetch" href="/assets/js/86.69c468cc.js"><link rel="prefetch" href="/assets/js/87.16e63827.js"><link rel="prefetch" href="/assets/js/88.ae2f9e8a.js"><link rel="prefetch" href="/assets/js/89.035e8da0.js"><link rel="prefetch" href="/assets/js/9.a4956116.js"><link rel="prefetch" href="/assets/js/90.2006698f.js"><link rel="prefetch" href="/assets/js/91.7c4e3892.js"><link rel="prefetch" href="/assets/js/92.6f174fc0.js"><link rel="prefetch" href="/assets/js/93.8031f7e7.js"><link rel="prefetch" href="/assets/js/94.96b58d0d.js"><link rel="prefetch" href="/assets/js/95.7d536eff.js"><link rel="prefetch" href="/assets/js/96.0682d5e7.js"><link rel="prefetch" href="/assets/js/97.b4732b1c.js"><link rel="prefetch" href="/assets/js/98.ef97c75e.js"><link rel="prefetch" href="/assets/js/99.3ddd42ed.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ad8f3402.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/logo.gif" alt="Jankin" class="logo"> <span class="site-name can-hide">Jankin</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="笔记" class="dropdown-title"><span class="title">笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="笔记" class="mobile-dropdown-title"><span class="title">笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/网站推荐/编程相关.html" class="nav-link">
+  网站推荐
+</a></li><li class="dropdown-item"><!----> <a href="/notes/前端开发/ESLint.html" class="nav-link">
+  前端开发
+</a></li><li class="dropdown-item"><!----> <a href="/notes/uniapp/uniapp 注册分享.html" class="nav-link">
+  uniapp
+</a></li><li class="dropdown-item"><!----> <a href="/notes/CSS/弹性盒子.html" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/notes/JavaScript/二进制数据.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Git/常用命令.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notes/网络/https.html" class="nav-link">
+  网络
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Html/html中的回流、重绘.html" class="nav-link">
+  Html
+</a></li></ul></div></div><div class="nav-item"><a href="https://gitee.com/JankinWang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/JankinWang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="笔记" class="dropdown-title"><span class="title">笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="笔记" class="mobile-dropdown-title"><span class="title">笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/网站推荐/编程相关.html" class="nav-link">
+  网站推荐
+</a></li><li class="dropdown-item"><!----> <a href="/notes/前端开发/ESLint.html" class="nav-link">
+  前端开发
+</a></li><li class="dropdown-item"><!----> <a href="/notes/uniapp/uniapp 注册分享.html" class="nav-link">
+  uniapp
+</a></li><li class="dropdown-item"><!----> <a href="/notes/CSS/弹性盒子.html" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/notes/JavaScript/二进制数据.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Git/常用命令.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notes/网络/https.html" class="nav-link">
+  网络
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Html/html中的回流、重绘.html" class="nav-link">
+  Html
+</a></li></ul></div></div><div class="nav-item"><a href="https://gitee.com/JankinWang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/JankinWang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/notes/CSS/弹性盒子.html" class="active sidebar-link">CSS弹性布局 flex</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notes/CSS/弹性盒子.html#弹性容器" class="sidebar-link">弹性容器</a></li><li class="sidebar-sub-header"><a href="/notes/CSS/弹性盒子.html#弹性元素" class="sidebar-link">弹性元素</a></li></ul></li><li><a href="/notes/CSS/css字体文本.html" class="sidebar-link">css字体文本</a></li><li><a href="/notes/CSS/过渡 transition.html" class="sidebar-link">Transition 过渡</a></li><li><a href="/notes/CSS/变形 transform.html" class="sidebar-link">css Transform 变形</a></li><li><a href="/notes/CSS/媒体查询.html" class="sidebar-link">媒体查询</a></li><li><a href="/notes/CSS/值和单位.html" class="sidebar-link">值和单位</a></li><li><a href="/notes/CSS/网格布局.html" class="sidebar-link">网格布局</a></li><li><a href="/notes/CSS/动画.html" class="sidebar-link">动画</a></li><li><a href="/notes/CSS/特性查询.html" class="sidebar-link">特性查询</a></li><li><a href="/notes/CSS/伪类和伪元素.html" class="sidebar-link">伪类</a></li><li><a href="/notes/CSS/代码片段.html" class="sidebar-link">定义滚动条样式</a></li><li><a href="/notes/CSS/预处理器.html" class="sidebar-link">预处理器</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="css弹性布局-flex"><a href="#css弹性布局-flex" class="header-anchor">#</a> CSS弹性布局 flex</h1> <p>注：弹性盒依赖父子关系，弹性容器（父）、弹性元素（子）</p> <h2 id="弹性容器"><a href="#弹性容器" class="header-anchor">#</a> 弹性容器</h2> <blockquote><p>负责在所占空间内布置子元素（直接子元素，后代元素不受影响），控制子元素的布局。</p></blockquote> <h3 id="激活弹性容器"><a href="#激活弹性容器" class="header-anchor">#</a> 激活弹性容器</h3> <div class="language-css extra-class"><pre class="language-css"><code><span class="token comment">/* 块级框 */</span>
+<span class="token selector">div</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* 行内块级框 不常用 */</span>
+<span class="token selector">div</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> inline-flex<span class="token punctuation">;</span>
+    <span class="token comment">/* 或 */</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> inline flex<span class="token punctuation">;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex inline<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="定义弹性容器"><a href="#定义弹性容器" class="header-anchor">#</a> 定义弹性容器</h3> <h4 id="flex-direction"><a href="#flex-direction" class="header-anchor">#</a> flex-direction</h4> <blockquote><p>修改主轴方向</p></blockquote> <div class="language-css extra-class"><pre class="language-css"><code><span class="token comment">/* 书写模式是从左至右时 */</span>
+
+<span class="token comment">/* 横轴 起点在左 终点在右 */</span>
+<span class="token property">flex-direction</span><span class="token punctuation">:</span> row<span class="token punctuation">;</span>
+
+<span class="token comment">/* 横轴 起点在右 终点在左 */</span>
+<span class="token property">flex-direction</span><span class="token punctuation">:</span> row-reverse<span class="token punctuation">;</span>
+
+<span class="token comment">/* 纵轴 起点在上 终点在下 */</span>
+<span class="token property">flex-direction</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span>
+
+<span class="token comment">/* 纵轴 起点在下 终点在上 */</span>
+<span class="token property">flex-direction</span><span class="token punctuation">:</span> column-reverse<span class="token punctuation">;</span>
+</code></pre></div><div class="language-css extra-class"><pre class="language-css"><code><span class="token comment">/* 书写模式是从右至左时 */</span>
+
+<span class="token comment">/* 横轴 起点在右 终点在左 */</span>
+<span class="token property">flex-direction</span><span class="token punctuation">:</span> row<span class="token punctuation">;</span>
+
+<span class="token comment">/* 横轴 起点在左 终点在右 */</span>
+<span class="token property">flex-direction</span><span class="token punctuation">:</span> row-reverse<span class="token punctuation">;</span>
+
+其他书写模式根据实际情况使用
+</code></pre></div><h4 id="flex-wrap"><a href="#flex-wrap" class="header-anchor">#</a> <strong>flex-wrap</strong></h4> <blockquote><p>是否允许换行</p></blockquote> <div class="language-css extra-class"><pre class="language-css"><code><span class="token property">flex-wrap</span><span class="token punctuation">:</span> nowrap<span class="token punctuation">;</span>
+
+<span class="token property">flex-wrap</span><span class="token punctuation">:</span> wrap<span class="token punctuation">;</span>
+
+<span class="token property">flex-wrap</span><span class="token punctuation">:</span> wrap-reverse<span class="token punctuation">;</span>
+</code></pre></div><h4 id="flex-flow"><a href="#flex-flow" class="header-anchor">#</a> <strong>flex-flow</strong></h4> <blockquote><p>flex-directon 和 flex-wrap 的简写</p></blockquote> <div class="language-css extra-class"><pre class="language-css"><code><span class="token property">flex-flow</span><span class="token punctuation">:</span> row wrap<span class="token punctuation">;</span>
+<span class="token property">flex-flow</span><span class="token punctuation">:</span> row nowrap<span class="token punctuation">;</span>
+<span class="token property">flex-flow</span><span class="token punctuation">:</span> column wrap<span class="token punctuation">;</span>
+...
+</code></pre></div><h4 id="justify-content"><a href="#justify-content" class="header-anchor">#</a> <strong>justify-content</strong></h4> <blockquote><p>定义如何把空间分配到弹性元素四周, 主轴方向的分布方式</p></blockquote> <div class="language-css extra-class"><pre class="language-css"><code><span class="token comment">/* 可选值 */</span>
+flex-start
+flex-end
+center
+
+space-between
+space-around
+space-evenly
+
+</code></pre></div><h4 id="align-content"><a href="#align-content" class="header-anchor">#</a> <strong>align-content</strong></h4> <blockquote><p>垂直（副轴）方向每一行的分布方式</p></blockquote> <div class="language-css extra-class"><pre class="language-css"><code><span class="token comment">/* 可选值 */</span>
+
+flex-start
+flex-end
+center
+
+space-between
+space-around
+space-evenly
+</code></pre></div><h4 id="align-item"><a href="#align-item" class="header-anchor">#</a> <strong>align-item</strong></h4> <blockquote><p>垂直（副轴）方向上 每个弹性元素的对齐方式，在每个元素的高度不等时有用</p></blockquote> <div class="language-css extra-class"><pre class="language-css"><code>flex-start
+flex-end
+center
+
+baseline
+stretch
+</code></pre></div><p><img src="https://raw.githubusercontent.com/JankinWang/PicGo/main//epub_31594821_219" alt="弹性容器属性"></p> <h2 id="弹性元素"><a href="#弹性元素" class="header-anchor">#</a> 弹性元素</h2> <blockquote><p><em>弹性容器</em> 的每个 直接子元素 都变成一个弹性元素</p> <p>特性：</p> <ul><li>弹性元素外边距不折叠</li> <li>float 和 clear 属性对弹性元素不起作用</li> <li>position: absolute; 绝对定位依然有效</li></ul></blockquote> <h3 id="align-self"><a href="#align-self" class="header-anchor">#</a> <strong>align-self</strong></h3> <blockquote><p>在单个元素上，覆盖align-item</p></blockquote> <h3 id="flex"><a href="#flex" class="header-anchor">#</a> <strong>flex</strong></h3> <blockquote><p>定义元素的弹性增长，弹性缩减</p></blockquote> <div class="language-css extra-class"><pre class="language-css"><code><span class="token comment">/* none | [ &lt;'flex-grow'&gt; &lt;'flex-shrink'&gt;? || &lt;'flex-basis'&gt; ] */</span>
+<span class="token property">flex</span><span class="token punctuation">:</span> 1 0 auto；
+</code></pre></div><p><strong>flex 由三个属性构成</strong></p> <p>flex-grow: <number></number></p> <blockquote><p>多出来的留白（或剩余宽度）会按照flex-grow（增长因子）的值分配给每个弹性子元素，flex-grow的值为非负整数。如果一个弹性子元素的flex-grow值为0，那么它的宽度不会超过flex-basis的值；如果某个弹性子元素的增长因子非0，那么这些元素会增长到所有的剩余空间被分配完，也就意味着弹性子元素会填满容器的宽度</p></blockquote> <p>flex-shrink: <number></number></p> <blockquote><p>计算出弹性子元素的初始主尺寸后，它们的累加值可能会超出弹性容器的可用宽度。如果不用flex-shrink，就会导致溢出。</p> <p>每个子元素的flex-shrink值代表了它是否应该收缩以防止溢出。如果某个子元素为flex-shrink: 0，则不会收缩；如果值大于0，则会收缩至不再溢出。按照flex-shrink值的比例，值越大的元素收缩得越多。</p></blockquote> <p>flex-basis: content | &lt;'width'&gt;</p> <blockquote><p>flex-basis定义了元素大小的基准值，即一个初始的“主尺寸”。flex-basis属性可以设置为任意的width值，包括px、em、百分比。它的初始值是auto，此时浏览器会检查元素是否设置了width属性值。如果有，则使用width的值作为flex-basis的值；如果没有，则用元素内容自身的大小。如果flex-basis的值不是auto, width属性会被忽略</p></blockquote> <h3 id="order"><a href="#order" class="header-anchor">#</a> <strong>order</strong></h3> <blockquote><p>元素排序</p></blockquote> <div class="language-css extra-class"><pre class="language-css"><code><span class="token property">order</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span> <span class="token comment">/* 增加排序权重 */</span> 
+</code></pre></div><img src="https://raw.githubusercontent.com/JankinWang/PicGo/main//epub_31594821_220" alt="弹性子元素属性"></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/notes/CSS/css字体文本.html">
+        css字体文本
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.bc5c4fcd.js" defer></script><script src="/assets/js/2.ed050c36.js" defer></script><script src="/assets/js/20.2993df03.js" defer></script>
+  </body>
+</html>

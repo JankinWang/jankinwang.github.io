@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>表的操作 | Jankin</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.png">
+    <meta name="description" content="永远不止步">
+    
+    <link rel="preload" href="/assets/css/0.styles.ad8f3402.css" as="style"><link rel="preload" href="/assets/js/app.bc5c4fcd.js" as="script"><link rel="preload" href="/assets/js/2.ed050c36.js" as="script"><link rel="preload" href="/assets/js/71.b2d845f6.js" as="script"><link rel="prefetch" href="/assets/js/10.911fee8c.js"><link rel="prefetch" href="/assets/js/100.d7914dd6.js"><link rel="prefetch" href="/assets/js/101.ce36bc73.js"><link rel="prefetch" href="/assets/js/102.c2a729a6.js"><link rel="prefetch" href="/assets/js/103.e4837cac.js"><link rel="prefetch" href="/assets/js/104.5f0c634d.js"><link rel="prefetch" href="/assets/js/105.727799c7.js"><link rel="prefetch" href="/assets/js/106.b5f68347.js"><link rel="prefetch" href="/assets/js/107.edb8da08.js"><link rel="prefetch" href="/assets/js/108.a021ffc7.js"><link rel="prefetch" href="/assets/js/109.e79cb03a.js"><link rel="prefetch" href="/assets/js/11.5e3e9d90.js"><link rel="prefetch" href="/assets/js/110.cc772ee9.js"><link rel="prefetch" href="/assets/js/111.cf3ef84d.js"><link rel="prefetch" href="/assets/js/112.70a27521.js"><link rel="prefetch" href="/assets/js/113.4c95d737.js"><link rel="prefetch" href="/assets/js/114.20ef0188.js"><link rel="prefetch" href="/assets/js/115.094b6403.js"><link rel="prefetch" href="/assets/js/116.47009bcd.js"><link rel="prefetch" href="/assets/js/12.4bf856b0.js"><link rel="prefetch" href="/assets/js/13.b3f69ac4.js"><link rel="prefetch" href="/assets/js/14.69a092fd.js"><link rel="prefetch" href="/assets/js/15.e6dbb4b0.js"><link rel="prefetch" href="/assets/js/16.4af40172.js"><link rel="prefetch" href="/assets/js/17.635bcb3e.js"><link rel="prefetch" href="/assets/js/18.0c722356.js"><link rel="prefetch" href="/assets/js/19.a5395ba3.js"><link rel="prefetch" href="/assets/js/20.2993df03.js"><link rel="prefetch" href="/assets/js/21.df80cbd6.js"><link rel="prefetch" href="/assets/js/22.7bdac56a.js"><link rel="prefetch" href="/assets/js/23.f29bd583.js"><link rel="prefetch" href="/assets/js/24.0c26cacd.js"><link rel="prefetch" href="/assets/js/25.45b0fdeb.js"><link rel="prefetch" href="/assets/js/26.5a31944a.js"><link rel="prefetch" href="/assets/js/27.60767af7.js"><link rel="prefetch" href="/assets/js/28.31ec3ba0.js"><link rel="prefetch" href="/assets/js/29.6ba5d940.js"><link rel="prefetch" href="/assets/js/3.160fbe9f.js"><link rel="prefetch" href="/assets/js/30.23d87ba8.js"><link rel="prefetch" href="/assets/js/31.aaec1fcb.js"><link rel="prefetch" href="/assets/js/32.907c5f16.js"><link rel="prefetch" href="/assets/js/33.2598d5f3.js"><link rel="prefetch" href="/assets/js/34.a2630726.js"><link rel="prefetch" href="/assets/js/35.f78a1b04.js"><link rel="prefetch" href="/assets/js/36.f8b1bfd7.js"><link rel="prefetch" href="/assets/js/37.cd266792.js"><link rel="prefetch" href="/assets/js/38.0ad0a886.js"><link rel="prefetch" href="/assets/js/39.bb0dad24.js"><link rel="prefetch" href="/assets/js/4.c01d6a06.js"><link rel="prefetch" href="/assets/js/40.a717f900.js"><link rel="prefetch" href="/assets/js/41.1c7faaf4.js"><link rel="prefetch" href="/assets/js/42.a6c700ff.js"><link rel="prefetch" href="/assets/js/43.4d9356ae.js"><link rel="prefetch" href="/assets/js/44.52e60422.js"><link rel="prefetch" href="/assets/js/45.7b53dc11.js"><link rel="prefetch" href="/assets/js/46.98f47220.js"><link rel="prefetch" href="/assets/js/47.26b199fd.js"><link rel="prefetch" href="/assets/js/48.7ce3f7ec.js"><link rel="prefetch" href="/assets/js/49.9c427a43.js"><link rel="prefetch" href="/assets/js/5.bc53fba0.js"><link rel="prefetch" href="/assets/js/50.f8ef0190.js"><link rel="prefetch" href="/assets/js/51.18fa98bf.js"><link rel="prefetch" href="/assets/js/52.59e87d60.js"><link rel="prefetch" href="/assets/js/53.05892769.js"><link rel="prefetch" href="/assets/js/54.60024f69.js"><link rel="prefetch" href="/assets/js/55.27d04ddb.js"><link rel="prefetch" href="/assets/js/56.3c43eaf4.js"><link rel="prefetch" href="/assets/js/57.b2f46c47.js"><link rel="prefetch" href="/assets/js/58.6f7dcb8e.js"><link rel="prefetch" href="/assets/js/59.9a88ff96.js"><link rel="prefetch" href="/assets/js/6.1ec25c0d.js"><link rel="prefetch" href="/assets/js/60.e4bfc47b.js"><link rel="prefetch" href="/assets/js/61.a1729124.js"><link rel="prefetch" href="/assets/js/62.354ac8da.js"><link rel="prefetch" href="/assets/js/63.43b6a63c.js"><link rel="prefetch" href="/assets/js/64.60b4908e.js"><link rel="prefetch" href="/assets/js/65.1acd197d.js"><link rel="prefetch" href="/assets/js/66.60c16db3.js"><link rel="prefetch" href="/assets/js/67.3810679b.js"><link rel="prefetch" href="/assets/js/68.0d58baf1.js"><link rel="prefetch" href="/assets/js/69.6813b22e.js"><link rel="prefetch" href="/assets/js/7.4cceb720.js"><link rel="prefetch" href="/assets/js/70.7c4e3012.js"><link rel="prefetch" href="/assets/js/72.337ddfb8.js"><link rel="prefetch" href="/assets/js/73.724f90de.js"><link rel="prefetch" href="/assets/js/74.5cb7011d.js"><link rel="prefetch" href="/assets/js/75.52d8bebe.js"><link rel="prefetch" href="/assets/js/76.dd1c5f04.js"><link rel="prefetch" href="/assets/js/77.1dbf0759.js"><link rel="prefetch" href="/assets/js/78.e53ad7aa.js"><link rel="prefetch" href="/assets/js/79.325f3ecb.js"><link rel="prefetch" href="/assets/js/8.5938f0f3.js"><link rel="prefetch" href="/assets/js/80.f9c40ed2.js"><link rel="prefetch" href="/assets/js/81.71323674.js"><link rel="prefetch" href="/assets/js/82.c8861b95.js"><link rel="prefetch" href="/assets/js/83.1f13f1f7.js"><link rel="prefetch" href="/assets/js/84.c0deb073.js"><link rel="prefetch" href="/assets/js/85.f7682f47.js"><link rel="prefetch" href="/assets/js/86.69c468cc.js"><link rel="prefetch" href="/assets/js/87.16e63827.js"><link rel="prefetch" href="/assets/js/88.ae2f9e8a.js"><link rel="prefetch" href="/assets/js/89.035e8da0.js"><link rel="prefetch" href="/assets/js/9.a4956116.js"><link rel="prefetch" href="/assets/js/90.2006698f.js"><link rel="prefetch" href="/assets/js/91.7c4e3892.js"><link rel="prefetch" href="/assets/js/92.6f174fc0.js"><link rel="prefetch" href="/assets/js/93.8031f7e7.js"><link rel="prefetch" href="/assets/js/94.96b58d0d.js"><link rel="prefetch" href="/assets/js/95.7d536eff.js"><link rel="prefetch" href="/assets/js/96.0682d5e7.js"><link rel="prefetch" href="/assets/js/97.b4732b1c.js"><link rel="prefetch" href="/assets/js/98.ef97c75e.js"><link rel="prefetch" href="/assets/js/99.3ddd42ed.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ad8f3402.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/logo.gif" alt="Jankin" class="logo"> <span class="site-name can-hide">Jankin</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="笔记" class="dropdown-title"><span class="title">笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="笔记" class="mobile-dropdown-title"><span class="title">笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/网站推荐/编程相关.html" class="nav-link">
+  网站推荐
+</a></li><li class="dropdown-item"><!----> <a href="/notes/前端开发/ESLint.html" class="nav-link">
+  前端开发
+</a></li><li class="dropdown-item"><!----> <a href="/notes/uniapp/uniapp 注册分享.html" class="nav-link">
+  uniapp
+</a></li><li class="dropdown-item"><!----> <a href="/notes/CSS/弹性盒子.html" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/notes/JavaScript/二进制数据.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Git/常用命令.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notes/网络/https.html" class="nav-link">
+  网络
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Html/html中的回流、重绘.html" class="nav-link">
+  Html
+</a></li></ul></div></div><div class="nav-item"><a href="https://gitee.com/JankinWang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/JankinWang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="笔记" class="dropdown-title"><span class="title">笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="笔记" class="mobile-dropdown-title"><span class="title">笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/网站推荐/编程相关.html" class="nav-link">
+  网站推荐
+</a></li><li class="dropdown-item"><!----> <a href="/notes/前端开发/ESLint.html" class="nav-link">
+  前端开发
+</a></li><li class="dropdown-item"><!----> <a href="/notes/uniapp/uniapp 注册分享.html" class="nav-link">
+  uniapp
+</a></li><li class="dropdown-item"><!----> <a href="/notes/CSS/弹性盒子.html" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/notes/JavaScript/二进制数据.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Git/常用命令.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notes/网络/https.html" class="nav-link">
+  网络
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Html/html中的回流、重绘.html" class="nav-link">
+  Html
+</a></li></ul></div></div><div class="nav-item"><a href="https://gitee.com/JankinWang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/JankinWang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="表的操作"><a href="#表的操作" class="header-anchor">#</a> 表的操作</h1> <h4 id="创建表"><a href="#创建表" class="header-anchor">#</a> 创建表</h4> <div class="language-mysql extra-class"><pre class="language-text"><code>CREATE [TEMPORARY] TABLE[ IF NOT EXISTS] [库名.]表名 ( 表的结构定义 )[表选项]
+        每个字段必须有数据类型
+        最后一个字段后不能有逗号
+        TEMPORARY 临时表，会话结束时表自动消失
+        对于字段的定义(详情参见`列属性`)：
+            字段名 数据类型 [NOT NULL | NULL] [DEFAULT default_value] [AUTO_INCREMENT] [UNIQUE [KEY] | [PRIMARY] KEY] [COMMENT 'string']
+
+
+-- 表选项
+    -- 字符集
+        CHARSET = charset_name
+        如果表没有设定，则使用数据库字符集
+    -- 存储引擎
+        ENGINE = engine_name
+        表在管理数据时采用的不同的数据结构，结构不同会导致处理方式、提供的特性操作等不同
+        常见的引擎：InnoDB MyISAM Memory/Heap BDB Merge Example CSV MaxDB Archive
+        不同的引擎在保存表的结构和数据时采用不同的方式
+        MyISAM表文件含义：.frm表定义，.MYD表数据，.MYI表索引
+        InnoDB表文件含义：.frm表定义，表空间数据和日志文件
+        SHOW ENGINES -- 显示存储引擎的状态信息
+        SHOW ENGINE 引擎名 {LOGS|STATUS} -- 显示存储引擎的日志或状态信息
+    -- 自增起始数
+    	AUTO_INCREMENT = 行数
+    -- 数据文件目录
+        DATA DIRECTORY = '目录'
+    -- 索引文件目录
+        INDEX DIRECTORY = '目录'
+    -- 表注释
+        COMMENT = 'string'
+    -- 分区选项
+        PARTITION BY ... (详细见手册)
+        
+    -- 列属性(列约束)
+        
+   
+   
+   	/* 列属性（列约束） */ ------------------
+    1. PRIMARY 主键
+        - 能唯一标识记录的字段，可以作为主键。
+        - 一个表只能有一个主键。
+        - 主键具有唯一性。
+        - 声明字段时，用 primary key 标识。
+            也可以在字段列表之后声明
+                例：create table tab ( id int, stu varchar(10), primary key (id));
+        - 主键字段的值不能为null。
+        - 主键可以由多个字段共同组成。此时需要在字段列表后声明的方法。
+            例：create table tab ( id int, stu varchar(10), age int, primary key (stu, age));
+
+    2. UNIQUE 唯一索引（唯一约束）
+        使得某字段的值也不能重复。
+
+    3. NULL 约束
+        null不是数据类型，是列的一个属性。
+        表示当前列是否可以为null，表示什么都没有。
+        null, 允许为空。默认。
+        not null, 不允许为空。
+        insert into tab values (null, 'val');
+            -- 此时表示将第一个字段的值设为null, 取决于该字段是否允许为null
+
+    4. DEFAULT 默认值属性
+        当前字段的默认值。
+        insert into tab values (default, 'val');    -- 此时表示强制使用默认值。
+        create table tab ( add_time timestamp default current_timestamp );
+            -- 表示将当前时间的时间戳设为默认值。
+            current_date, current_time
+
+    5. AUTO_INCREMENT 自动增长约束
+        自动增长必须为索引（主键或unique）
+        只能存在一个字段为自动增长。
+        默认为1开始自动增长。可以通过表属性 auto_increment = x进行设置，或 alter table tbl auto_increment = x;
+
+    6. COMMENT 注释
+        例：create table tab ( id int ) comment '注释内容';
+
+    7. FOREIGN KEY 外键约束
+        用于限制主表与从表数据完整性。
+        alter table t1 add constraint `t1_t2_fk` foreign key (t1_id) references t2(id);
+            -- 将表t1的t1_id外键关联到表t2的id字段。
+            -- 每个外键都有一个名字，可以通过 constraint 指定
+        存在外键的表，称之为从表（子表），外键指向的表，称之为主表（父表）。
+        作用：保持数据一致性，完整性，主要目的是控制存储在外键表（从表）中的数据。
+        MySQL中，可以对InnoDB引擎使用外键约束：
+        语法：
+        foreign key (外键字段） references 主表名 (关联字段) [主表记录删除时的动作] [主表记录更新时的动作]
+        此时需要检测一个从表的外键需要约束为主表的已存在的值。外键在没有关联的情况下，可以设置为null.前提是该外键列，没有not null。
+        可以不指定主表记录更改或更新时的动作，那么此时主表的操作被拒绝。
+        如果指定了 on update 或 on delete：在删除或更新时，有如下几个操作可以选择：
+        1. cascade，级联操作。主表数据被更新（主键值更新），从表也被更新（外键值更新）。主表记录被删除，从表相关记录也被删除。
+        2. set null，设置为null。主表数据被更新（主键值更新），从表的外键被设置为null。主表记录被删除，从表相关记录外键被设置成null。但注意，要求该外键列，没有not null属性约束。
+        3. restrict，拒绝父表删除和更新。
+        注意，外键只被InnoDB存储引擎所支持。其他引擎是不支持的。
+
+</code></pre></div><h4 id=""><a href="#" class="header-anchor">#</a></h4> <h4 id="查看所有表"><a href="#查看所有表" class="header-anchor">#</a> 查看所有表</h4> <div class="language-mysql extra-class"><pre class="language-text"><code>SHOW TABLES[ LIKE 'pattern']
+SHOW TABLES FROM  库名
+</code></pre></div><h4 id="查看表结构"><a href="#查看表结构" class="header-anchor">#</a> 查看表结构</h4> <div class="language-mysql extra-class"><pre class="language-text"><code>SHOW CREATE TABLE 表名 （信息更详细）
+DESC 表名 / DESCRIBE 表名 / EXPLAIN 表名 / SHOW COLUMNS FROM 表名 [LIKE 'PATTERN']
+SHOW TABLE STATUS [FROM db_name] [LIKE 'pattern']
+</code></pre></div><h4 id="修改表"><a href="#修改表" class="header-anchor">#</a> 修改表</h4> <div class="language-mysql extra-class"><pre class="language-text"><code># 重命名
+RENAME TABLE 原表名 TO 新表名
+RENAME TABLE 原表名 TO 库名.表名 （可将表移动到另一个数据库）
+-- RENAME可以交换两个表名 
+RENAME TABLE t1 TO t3,t2 TO t1,t2 TO t3;
+-- 另一种重命名得方式
+lock tables t1 write ,t2 write;
+alter table t1 rename to t3;
+alter table t2 rename to t1;
+alter table t3 rename to t2;
+unlock tables;
+
+# 修改表选项（属性）
+ALTER TABLE 表名 表的选项
+eg: ALTER TABLE 表名 ENGINE=MYISAM;
+
+# 修改表的字段结构
+ALTER TABLE 表名 操作名
+        -- 操作名
+            ADD[ COLUMN] 字段定义       -- 增加字段
+                AFTER 字段名          -- 表示增加在该字段名后面
+                FIRST               -- 表示增加在第一个
+            ADD PRIMARY KEY(字段名)   -- 创建主键
+            ADD UNIQUE [索引名] (字段名)-- 创建唯一索引
+            ADD INDEX [索引名] (字段名) -- 创建普通索引
+            DROP[ COLUMN] 字段名      -- 删除字段
+            MODIFY[ COLUMN] 字段名 字段属性     -- 支持对字段属性进行修改，不能修改字段名(所有原有属性也需写上)
+            CHANGE[ COLUMN] 原字段名 新字段名 字段属性      -- 支持对字段名修改
+            DROP PRIMARY KEY    -- 删除主键(删除主键前需删除其AUTO_INCREMENT属性)
+            DROP INDEX 索引名 -- 删除索引
+            DROP FOREIGN KEY 外键    -- 删除外键
+            
+# 删除表
+    DROP TABLE [IF EXISTS] 表名 ...
+# 清空表数据
+    TRUNCATE [TABLE] 表名
+# 复制表结构
+    CREATE TABLE 表名 LIKE 要复制的表名
+# 复制表结构和数据
+    CREATE TABLE 表名 [AS] SELECT * FROM 要复制的表名
+# 检查表是否有错误
+    CHECK TABLE tbl_name [, tbl_name] ... [option] ...
+# 优化表
+    OPTIMIZE [LOCAL | NO_WRITE_TO_BINLOG] TABLE tbl_name [, tbl_name] ...
+# 修复表
+    REPAIR [LOCAL | NO_WRITE_TO_BINLOG] TABLE tbl_name [, tbl_name] ... [QUICK] [EXTENDED] [USE_FRM]
+# 分析表
+    ANALYZE [LOCAL | NO_WRITE_TO_BINLOG] TABLE tbl_name [, tbl_name] ...
+</code></pre></div><h4 id="锁表"><a href="#锁表" class="header-anchor">#</a> 锁表</h4> <div class="language-mysql extra-class"><pre class="language-text"><code>/* 锁表 */
+表锁定只用于防止其它客户端进行不正当地读取和写入
+MyISAM 支持表级锁，InnoDB 支持行级锁
+
+-- 锁定
+    LOCK TABLES tbl_name [AS alias]
+-- 解锁
+    UNLOCK TABLES
+
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.bc5c4fcd.js" defer></script><script src="/assets/js/2.ed050c36.js" defer></script><script src="/assets/js/71.b2d845f6.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>数据库+用户权限 | Jankin</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.png">
+    <meta name="description" content="永远不止步">
+    
+    <link rel="preload" href="/assets/css/0.styles.ad8f3402.css" as="style"><link rel="preload" href="/assets/js/app.bc5c4fcd.js" as="script"><link rel="preload" href="/assets/js/2.ed050c36.js" as="script"><link rel="preload" href="/assets/js/67.3810679b.js" as="script"><link rel="prefetch" href="/assets/js/10.911fee8c.js"><link rel="prefetch" href="/assets/js/100.d7914dd6.js"><link rel="prefetch" href="/assets/js/101.ce36bc73.js"><link rel="prefetch" href="/assets/js/102.c2a729a6.js"><link rel="prefetch" href="/assets/js/103.e4837cac.js"><link rel="prefetch" href="/assets/js/104.5f0c634d.js"><link rel="prefetch" href="/assets/js/105.727799c7.js"><link rel="prefetch" href="/assets/js/106.b5f68347.js"><link rel="prefetch" href="/assets/js/107.edb8da08.js"><link rel="prefetch" href="/assets/js/108.a021ffc7.js"><link rel="prefetch" href="/assets/js/109.e79cb03a.js"><link rel="prefetch" href="/assets/js/11.5e3e9d90.js"><link rel="prefetch" href="/assets/js/110.cc772ee9.js"><link rel="prefetch" href="/assets/js/111.cf3ef84d.js"><link rel="prefetch" href="/assets/js/112.70a27521.js"><link rel="prefetch" href="/assets/js/113.4c95d737.js"><link rel="prefetch" href="/assets/js/114.20ef0188.js"><link rel="prefetch" href="/assets/js/115.094b6403.js"><link rel="prefetch" href="/assets/js/116.47009bcd.js"><link rel="prefetch" href="/assets/js/12.4bf856b0.js"><link rel="prefetch" href="/assets/js/13.b3f69ac4.js"><link rel="prefetch" href="/assets/js/14.69a092fd.js"><link rel="prefetch" href="/assets/js/15.e6dbb4b0.js"><link rel="prefetch" href="/assets/js/16.4af40172.js"><link rel="prefetch" href="/assets/js/17.635bcb3e.js"><link rel="prefetch" href="/assets/js/18.0c722356.js"><link rel="prefetch" href="/assets/js/19.a5395ba3.js"><link rel="prefetch" href="/assets/js/20.2993df03.js"><link rel="prefetch" href="/assets/js/21.df80cbd6.js"><link rel="prefetch" href="/assets/js/22.7bdac56a.js"><link rel="prefetch" href="/assets/js/23.f29bd583.js"><link rel="prefetch" href="/assets/js/24.0c26cacd.js"><link rel="prefetch" href="/assets/js/25.45b0fdeb.js"><link rel="prefetch" href="/assets/js/26.5a31944a.js"><link rel="prefetch" href="/assets/js/27.60767af7.js"><link rel="prefetch" href="/assets/js/28.31ec3ba0.js"><link rel="prefetch" href="/assets/js/29.6ba5d940.js"><link rel="prefetch" href="/assets/js/3.160fbe9f.js"><link rel="prefetch" href="/assets/js/30.23d87ba8.js"><link rel="prefetch" href="/assets/js/31.aaec1fcb.js"><link rel="prefetch" href="/assets/js/32.907c5f16.js"><link rel="prefetch" href="/assets/js/33.2598d5f3.js"><link rel="prefetch" href="/assets/js/34.a2630726.js"><link rel="prefetch" href="/assets/js/35.f78a1b04.js"><link rel="prefetch" href="/assets/js/36.f8b1bfd7.js"><link rel="prefetch" href="/assets/js/37.cd266792.js"><link rel="prefetch" href="/assets/js/38.0ad0a886.js"><link rel="prefetch" href="/assets/js/39.bb0dad24.js"><link rel="prefetch" href="/assets/js/4.c01d6a06.js"><link rel="prefetch" href="/assets/js/40.a717f900.js"><link rel="prefetch" href="/assets/js/41.1c7faaf4.js"><link rel="prefetch" href="/assets/js/42.a6c700ff.js"><link rel="prefetch" href="/assets/js/43.4d9356ae.js"><link rel="prefetch" href="/assets/js/44.52e60422.js"><link rel="prefetch" href="/assets/js/45.7b53dc11.js"><link rel="prefetch" href="/assets/js/46.98f47220.js"><link rel="prefetch" href="/assets/js/47.26b199fd.js"><link rel="prefetch" href="/assets/js/48.7ce3f7ec.js"><link rel="prefetch" href="/assets/js/49.9c427a43.js"><link rel="prefetch" href="/assets/js/5.bc53fba0.js"><link rel="prefetch" href="/assets/js/50.f8ef0190.js"><link rel="prefetch" href="/assets/js/51.18fa98bf.js"><link rel="prefetch" href="/assets/js/52.59e87d60.js"><link rel="prefetch" href="/assets/js/53.05892769.js"><link rel="prefetch" href="/assets/js/54.60024f69.js"><link rel="prefetch" href="/assets/js/55.27d04ddb.js"><link rel="prefetch" href="/assets/js/56.3c43eaf4.js"><link rel="prefetch" href="/assets/js/57.b2f46c47.js"><link rel="prefetch" href="/assets/js/58.6f7dcb8e.js"><link rel="prefetch" href="/assets/js/59.9a88ff96.js"><link rel="prefetch" href="/assets/js/6.1ec25c0d.js"><link rel="prefetch" href="/assets/js/60.e4bfc47b.js"><link rel="prefetch" href="/assets/js/61.a1729124.js"><link rel="prefetch" href="/assets/js/62.354ac8da.js"><link rel="prefetch" href="/assets/js/63.43b6a63c.js"><link rel="prefetch" href="/assets/js/64.60b4908e.js"><link rel="prefetch" href="/assets/js/65.1acd197d.js"><link rel="prefetch" href="/assets/js/66.60c16db3.js"><link rel="prefetch" href="/assets/js/68.0d58baf1.js"><link rel="prefetch" href="/assets/js/69.6813b22e.js"><link rel="prefetch" href="/assets/js/7.4cceb720.js"><link rel="prefetch" href="/assets/js/70.7c4e3012.js"><link rel="prefetch" href="/assets/js/71.b2d845f6.js"><link rel="prefetch" href="/assets/js/72.337ddfb8.js"><link rel="prefetch" href="/assets/js/73.724f90de.js"><link rel="prefetch" href="/assets/js/74.5cb7011d.js"><link rel="prefetch" href="/assets/js/75.52d8bebe.js"><link rel="prefetch" href="/assets/js/76.dd1c5f04.js"><link rel="prefetch" href="/assets/js/77.1dbf0759.js"><link rel="prefetch" href="/assets/js/78.e53ad7aa.js"><link rel="prefetch" href="/assets/js/79.325f3ecb.js"><link rel="prefetch" href="/assets/js/8.5938f0f3.js"><link rel="prefetch" href="/assets/js/80.f9c40ed2.js"><link rel="prefetch" href="/assets/js/81.71323674.js"><link rel="prefetch" href="/assets/js/82.c8861b95.js"><link rel="prefetch" href="/assets/js/83.1f13f1f7.js"><link rel="prefetch" href="/assets/js/84.c0deb073.js"><link rel="prefetch" href="/assets/js/85.f7682f47.js"><link rel="prefetch" href="/assets/js/86.69c468cc.js"><link rel="prefetch" href="/assets/js/87.16e63827.js"><link rel="prefetch" href="/assets/js/88.ae2f9e8a.js"><link rel="prefetch" href="/assets/js/89.035e8da0.js"><link rel="prefetch" href="/assets/js/9.a4956116.js"><link rel="prefetch" href="/assets/js/90.2006698f.js"><link rel="prefetch" href="/assets/js/91.7c4e3892.js"><link rel="prefetch" href="/assets/js/92.6f174fc0.js"><link rel="prefetch" href="/assets/js/93.8031f7e7.js"><link rel="prefetch" href="/assets/js/94.96b58d0d.js"><link rel="prefetch" href="/assets/js/95.7d536eff.js"><link rel="prefetch" href="/assets/js/96.0682d5e7.js"><link rel="prefetch" href="/assets/js/97.b4732b1c.js"><link rel="prefetch" href="/assets/js/98.ef97c75e.js"><link rel="prefetch" href="/assets/js/99.3ddd42ed.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ad8f3402.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/logo.gif" alt="Jankin" class="logo"> <span class="site-name can-hide">Jankin</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="笔记" class="dropdown-title"><span class="title">笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="笔记" class="mobile-dropdown-title"><span class="title">笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/网站推荐/编程相关.html" class="nav-link">
+  网站推荐
+</a></li><li class="dropdown-item"><!----> <a href="/notes/前端开发/ESLint.html" class="nav-link">
+  前端开发
+</a></li><li class="dropdown-item"><!----> <a href="/notes/uniapp/uniapp 注册分享.html" class="nav-link">
+  uniapp
+</a></li><li class="dropdown-item"><!----> <a href="/notes/CSS/弹性盒子.html" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/notes/JavaScript/二进制数据.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Git/常用命令.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notes/网络/https.html" class="nav-link">
+  网络
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Html/html中的回流、重绘.html" class="nav-link">
+  Html
+</a></li></ul></div></div><div class="nav-item"><a href="https://gitee.com/JankinWang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/JankinWang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="笔记" class="dropdown-title"><span class="title">笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="笔记" class="mobile-dropdown-title"><span class="title">笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/网站推荐/编程相关.html" class="nav-link">
+  网站推荐
+</a></li><li class="dropdown-item"><!----> <a href="/notes/前端开发/ESLint.html" class="nav-link">
+  前端开发
+</a></li><li class="dropdown-item"><!----> <a href="/notes/uniapp/uniapp 注册分享.html" class="nav-link">
+  uniapp
+</a></li><li class="dropdown-item"><!----> <a href="/notes/CSS/弹性盒子.html" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/notes/JavaScript/二进制数据.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Git/常用命令.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/notes/网络/https.html" class="nav-link">
+  网络
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Html/html中的回流、重绘.html" class="nav-link">
+  Html
+</a></li></ul></div></div><div class="nav-item"><a href="https://gitee.com/JankinWang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/JankinWang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="数据库-用户权限"><a href="#数据库-用户权限" class="header-anchor">#</a> 数据库+用户权限</h1> <h2 id="数据库操作"><a href="#数据库操作" class="header-anchor">#</a> 数据库操作</h2> <h4 id="连接数据库管理系统-mysql"><a href="#连接数据库管理系统-mysql" class="header-anchor">#</a> 连接数据库管理系统（mysql）</h4> <div class="language-mysql extra-class"><pre class="language-text"><code>mysql -h 127.0.0.1 -P 3306 -u root -p # 行尾不加`;`
+# -h 指定远程数据库访问地址
+# -P 指定数据库访问端口
+# -u 用户名
+# -p 是否需要密码验证没有参数
+</code></pre></div><h4 id="创建数据库"><a href="#创建数据库" class="header-anchor">#</a> 创建数据库</h4> <div class="language-mysql extra-class"><pre class="language-text"><code>CREATE DATABASE name; # 简单创建数据库
+#数据库选项：
+        CHARACTER SET charset_name # 选择数据库字符集
+        COLLATE collation_name # 字符校对规则
+</code></pre></div><h4 id="查看已有库"><a href="#查看已有库" class="header-anchor">#</a> 查看已有库</h4> <div class="language-mysql extra-class"><pre class="language-text"><code>SHOW DATABASES [ LIKE 'PATTERN']; # 数据库名支持模糊查找
+</code></pre></div><h4 id="选择数据库"><a href="#选择数据库" class="header-anchor">#</a> 选择数据库</h4> <div class="language-mysql extra-class"><pre class="language-text"><code>USE student;
+# use `数据库名称`
+</code></pre></div><h4 id="查看当前选中的数据库"><a href="#查看当前选中的数据库" class="header-anchor">#</a> 查看当前选中的数据库</h4> <div class="language-mysql extra-class"><pre class="language-text"><code>SELECT database();
+</code></pre></div><h4 id="数据库信息"><a href="#数据库信息" class="header-anchor">#</a> 数据库信息</h4> <div class="language-mysql extra-class"><pre class="language-text"><code>-- 查看当前库信息
+    SHOW CREATE DATABASE 数据库名
+-- 修改库的选项信息
+    ALTER DATABASE 库名 选项信息
+-- 删除库
+    DROP DATABASE[ IF EXISTS] 数据库名
+        同时删除该数据库相关的目录及其目录内容
+</code></pre></div><h2 id="用户管理"><a href="#用户管理" class="header-anchor">#</a> 用户管理</h2> <h4 id="root密码重置"><a href="#root密码重置" class="header-anchor">#</a> root密码重置</h4> <div class="language-mysql extra-class"><pre class="language-text"><code>1. 停止MySQL服务
+2.  [Linux] /usr/local/mysql/bin/safe_mysqld --skip-grant-tables &amp;
+    [Windows] mysqld --skip-grant-tables
+3. use mysql;
+4. UPDATE `user` SET PASSWORD=PASSWORD(&quot;密码&quot;) WHERE `user` = &quot;root&quot;;
+5. FLUSH PRIVILEGES;
+用户信息表：mysql.user
+</code></pre></div><h4 id="增加用户"><a href="#增加用户" class="header-anchor">#</a> 增加用户</h4> <div class="language-mysql extra-class"><pre class="language-text"><code>CREATE USER 用户名 IDENTIFIED BY [PASSWORD] 密码(字符串)
+    - 必须拥有mysql数据库的全局CREATE USER权限，或拥有INSERT权限。
+    - 只能创建用户，不能赋予权限。
+    - 用户名，注意引号：如 'user_name'@'192.168.1.1'
+    - 密码也需引号，纯数字密码也要加引号
+    - 要在纯文本中指定密码，需忽略PASSWORD关键词。要把密码指定为由PASSWORD()函数返回的混编值，需包含关键字PASSWORD
+</code></pre></div><h4 id="重命名用户"><a href="#重命名用户" class="header-anchor">#</a> 重命名用户</h4> <div class="language-mysql extra-class"><pre class="language-text"><code>RENAME USER username TO newname;
+</code></pre></div><h4 id="设置密码"><a href="#设置密码" class="header-anchor">#</a> 设置密码</h4> <div class="language-mysql extra-class"><pre class="language-text"><code># 设置当前用户密码
+SET PASSWORD = PASSWORD('密码');
+
+# 设置指定用户密码
+SET PASSWORD FOR 用户名=PASSWORD('密码');
+</code></pre></div><h4 id="删除用户"><a href="#删除用户" class="header-anchor">#</a> 删除用户</h4> <div class="language-mysql extra-class"><pre class="language-text"><code>DROP USER 用户名;
+</code></pre></div><h2 id="权限管理"><a href="#权限管理" class="header-anchor">#</a> 权限管理</h2> <h4 id="分配权限"><a href="#分配权限" class="header-anchor">#</a> 分配权限</h4> <div class="language-mysql extra-class"><pre class="language-text"><code>GRANT 权限列表 ON 表名 TO 用户名 [IDENTIFIED BY [PASSWORD] 'password']
+    - all privileges 表示所有权限
+    - *.* 表示所有库的所有表
+    - 库名.表名 表示某库下面的某表
+GRANT ALL PRIVILEGES ON `pms`.* TO 'pms'@'%' IDENTIFIED BY 'pms0817';
+# IDENTIFIED BY 'pms0817' 设置用户密码，当用户不存在时创建用户
+</code></pre></div><h4 id="撤销权限"><a href="#撤销权限" class="header-anchor">#</a> 撤销权限</h4> <div class="language-mysql extra-class"><pre class="language-text"><code>REVOKE 权限列表 ON 表名 FROM 用户名
+REVOKE ALL PRIVILEGES, GRANT OPTION FROM 用户名   -- 撤销所有权限
+</code></pre></div><h4 id="刷新权限"><a href="#刷新权限" class="header-anchor">#</a> 刷新权限</h4> <div class="language-mysql extra-class"><pre class="language-text"><code>FLUSH PRIVILEGES;
+</code></pre></div><h4 id="查看权限"><a href="#查看权限" class="header-anchor">#</a> 查看权限</h4> <div class="language-mysql extra-class"><pre class="language-text"><code>SHOW GRANTS FOR 用户名
+
+-- 查看当前用户权限
+SHOW GRANTS; 或 SHOW GRANTS FOR CURRENT_USER; 或 SHOW GRANTS FOR CURRENT_USER();
+</code></pre></div><h4 id="权限层级"><a href="#权限层级" class="header-anchor">#</a> 权限层级</h4> <blockquote><p>要使用GRANT或REVOKE，必须拥有GRANT OPTION权限，并且必须用于您正在授予或撤销的权限。</p></blockquote> <div class="language-mysql extra-class"><pre class="language-text"><code>全局层级：全局权限适用于一个给定服务器中的所有数据库，mysql.user
+    GRANT ALL ON *.*和 REVOKE ALL ON *.*只授予和撤销全局权限。
+数据库层级：数据库权限适用于一个给定数据库中的所有目标，mysql.db, mysql.host
+    GRANT ALL ON db_name.*和REVOKE ALL ON db_name.*只授予和撤销数据库权限。
+表层级：表权限适用于一个给定表中的所有列，mysql.talbes_priv
+    GRANT ALL ON db_name.tbl_name和REVOKE ALL ON db_name.tbl_name只授予和撤销表权限。
+列层级：列权限适用于一个给定表中的单一列，mysql.columns_priv
+    当使用REVOKE时，您必须指定与被授权列相同的列。
+    GRANT update(列名) ON TABLE db_name.tbl_name TO 用户名 和 REVOKE update(列名) ON TABLE db_name.tbl_name FROM 用户名
+</code></pre></div><h4 id="权限列表"><a href="#权限列表" class="header-anchor">#</a> 权限列表</h4> <div class="language-mysql extra-class"><pre class="language-text"><code>ALL [PRIVILEGES]    -- 设置除GRANT OPTION之外的所有简单权限
+ALTER   -- 允许使用ALTER TABLE
+ALTER ROUTINE   -- 更改或取消已存储的子程序
+CREATE  -- 允许使用CREATE TABLE
+CREATE ROUTINE  -- 创建已存储的子程序
+CREATE TEMPORARY TABLES     -- 允许使用CREATE TEMPORARY TABLE
+CREATE USER     -- 允许使用CREATE USER, DROP USER, RENAME USER和REVOKE ALL PRIVILEGES。
+CREATE VIEW     -- 允许使用CREATE VIEW
+DELETE  -- 允许使用DELETE
+DROP    -- 允许使用DROP TABLE
+EXECUTE     -- 允许用户运行已存储的子程序
+FILE    -- 允许使用SELECT...INTO OUTFILE和LOAD DATA INFILE
+INDEX   -- 允许使用CREATE INDEX和DROP INDEX
+INSERT  -- 允许使用INSERT
+LOCK TABLES     -- 允许对您拥有SELECT权限的表使用LOCK TABLES
+PROCESS     -- 允许使用SHOW FULL PROCESSLIST
+REFERENCES  -- 未被实施
+RELOAD  -- 允许使用FLUSH
+REPLICATION CLIENT  -- 允许用户询问从属服务器或主服务器的地址
+REPLICATION SLAVE   -- 用于复制型从属服务器（从主服务器中读取二进制日志事件）
+SELECT  -- 允许使用SELECT
+SHOW DATABASES  -- 显示所有数据库
+SHOW VIEW   -- 允许使用SHOW CREATE VIEW
+SHUTDOWN    -- 允许使用mysqladmin shutdown
+SUPER   -- 允许使用CHANGE MASTER, KILL, PURGE MASTER LOGS和SET GLOBAL语句，mysqladmin debug命令；允许您连接（一次），即使已达到max_connections。
+UPDATE  -- 允许使用UPDATE
+USAGE   -- “无权限”的同义词
+GRANT OPTION    -- 允许授予权限
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.bc5c4fcd.js" defer></script><script src="/assets/js/2.ed050c36.js" defer></script><script src="/assets/js/67.3810679b.js" defer></script>
+  </body>
+</html>
