@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   repository_dispatch:
     types:
-      - run_workflow
+      - webhook_run_workflow
   push:
     branches:
       - master
