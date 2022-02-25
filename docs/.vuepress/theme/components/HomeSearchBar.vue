@@ -8,7 +8,7 @@
     >
       <template v-for="({ name }, index) in searchEngines">
         <option :value="index" :key="name" :selected="selected === index">
-          <span>{{ name }}</span>
+          {{ name }}
         </option>
       </template>
     </select>
@@ -66,11 +66,6 @@ export default {
       ],
     }
   },
-  computed: {},
-
-  watch: {},
-  // created () {},
-  // mounted () {},
 
   methods: {
     onSearch() {
