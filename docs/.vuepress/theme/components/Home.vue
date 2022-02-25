@@ -66,17 +66,17 @@ export default {
 
   .header {
     width: 100%;
-    height: 400px;
     overflow: hidden;
     position: relative;
     background-image: url('/assets/img/back.jpeg');
     background-size: auto;
     background-repeat: no-repeat;
     background: #f9f9f9;
+    padding: 5em 0;
   }
 
   .body {
-    width: 960px;
+    max-width: 960px;
     margin: 0 auto;
   }
 

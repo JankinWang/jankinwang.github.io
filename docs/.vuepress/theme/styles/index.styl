@@ -8,12 +8,24 @@
 .column {
   display: inline-block;
 
-  &.col-1 {
-    width: 8.333%;
+  @media (max-width: $MQMobileNarrow) {
+    // 12/1
+    &.col-1 {
+      width: 100%;
+    }
   }
 
-  &.col-4 {
-    width: 33.33%;
+  @media (min-width: 420px) and (max-width: 720px) {
+    // 12/6
+    &.col-2 {
+      width: 50%;
+    }
+  }
+
+  @media (min-width: 720px) {
+    &.col-4 {
+      width: 33.33%;
+    }
   }
 
   &.space10 {

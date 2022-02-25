@@ -1,9 +1,9 @@
 <template>
   <div class="web-demo">
-    <h2>Web Demo</h2>
+    <h2>前端案例</h2>
     <div class="demo-table">
       <template v-for="(item, index) in demos">
-        <div class="column col-4 space10" :key="index">
+        <div class="column col-4 col-1 col-2 space10" :key="index">
           <a class="demo-item" :href="item.link" target="_blank">
             <h4>{{ item.title }} <Iconfont name="icon-link" size="15px" /></h4>
 
@@ -22,7 +22,7 @@
 <script>
 export default {
   data() {
-    const webDemoUrl = 'https://gitee.com/jankinwang/web-demo/tree/master/src'
+    const webDemoUrl = 'https://jankinwang.github.io/WebWorkbook'
     return {
       demos: [
         {
@@ -30,35 +30,63 @@ export default {
           desc: '仿百度首页',
           tags: ['javascript', 'css', 'html'],
           repository: [],
-          link: `${webDemoUrl}/baidu`,
+          link: `${webDemoUrl}/仿百度首页/index.html`,
         },
         {
           title: 'ScrollEventMix',
           desc: '为滚动事件添加功能，如：检测子元素是否进入可视区域',
           tags: ['javascript'],
           repository: [],
-          link: `${webDemoUrl}/ScrollEventMix`,
+          link: `${webDemoUrl}/ScrollEventMix/index.html`,
         },
         {
           title: 'SliceUpload',
           desc: '文件切片上传',
           tags: ['javascript'],
           repository: [],
-          link: `${webDemoUrl}/fileSlicerUpload`,
+          link: `${webDemoUrl}`,
         },
         {
-          title: 'PageGoTop',
+          title: 'goPageTop',
           desc: '返回顶部',
           tags: ['javascript'],
           repository: [],
-          link: `${webDemoUrl}/goPageTop`,
+          link: `${webDemoUrl}/goPageTop/index.html`,
         },
         {
           title: '下拉刷新',
           desc: '拖拽事件下拉刷新',
           tags: ['javascript'],
           repository: [],
-          link: `${webDemoUrl}/下拉刷新`,
+          link: `${webDemoUrl}/下拉刷新/pull-refresh.html`,
+        },
+        {
+          title: '骨架屏',
+          desc: '骨架屏',
+          tags: ['javascript'],
+          repository: [],
+          link: `${webDemoUrl}/骨架屏/index.html`,
+        },
+        {
+          title: '地址选择器',
+          desc: '地址选择器',
+          tags: ['css', 'javascript'],
+          repository: [],
+          link: `${webDemoUrl}/地址选择器/index.html`,
+        },
+        {
+          title: '网站用户使用引导',
+          desc: '网站用户使用引导',
+          tags: ['css', 'javascript'],
+          repository: [],
+          link: `${webDemoUrl}/网站用户使用引导/index.html`,
+        },
+        {
+          title: 'bankCard',
+          desc: 'bankCard',
+          tags: ['css', 'javascript'],
+          repository: [],
+          link: `${webDemoUrl}/bankCard/index.html`,
         },
       ],
     }
@@ -89,7 +117,10 @@ export default {
 
       h4 {
         color: $accentColor;
-        .icon-link { visibility: visible; }
+
+        .icon-link {
+          visibility: visible;
+        }
       }
     }
 
@@ -99,7 +130,7 @@ export default {
 
       .icon-link {
         float: right;
-        visibility hidden;
+        visibility: hidden;
       }
     }
 

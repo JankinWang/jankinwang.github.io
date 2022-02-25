@@ -68,7 +68,6 @@ export default {
 // 
 .home-doc {
   z-index: 2;
-  width: 100vw;
   margin-top: 2em;
 
   .home-doc__links {

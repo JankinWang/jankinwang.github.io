@@ -84,7 +84,6 @@ export default {
   overflow: hidden;
   max-width: 40vw;
   margin: 0 auto;
-  margin-top: 6em;
   border: #e7e7e7 1px solid;
   border-radius: 1em;
   background-color: #fff;
@@ -147,6 +146,27 @@ export default {
     content: '';
     height: 1em;
     border-left: 1px #ccc solid;
+  }
+}
+
+@media (max-width: $MQMobileNarrow) {
+  .home-search-bar {
+    max-width: 90%;
+    display: block;
+
+    select, input {
+      width: 100%;
+      height: 48px;
+    }
+
+    .search-engine-select {
+      margin: 0;
+      border-bottom: 1px #e7e7e7 solid;
+    }
+
+    .cut-line--vertical {
+      display: none;
+    }
   }
 }
 </style>
