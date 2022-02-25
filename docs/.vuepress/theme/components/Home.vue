@@ -3,82 +3,45 @@
     class="home"
     :aria-labelledby="data.heroText !== null ? 'main-title' : null"
   >
-    <!-- S header -->
+    <!-- Header S -->
     <div class="header">
-      <h1>川流不息, code不止</h1>
+      <!-- 搜索栏 search bar -->
+      <home-search-bar></home-search-bar>
 
-      <!-- 快速链接 -->
-      <div class="quick-link">
-        <template v-for="item of quickLinkList">
-          <a :href="item.link" :key="item.title" target="_blank">
-            <img :src="item.img" :alt="item.title" :title="item.title" />
-          </a>
-        </template>
-      </div>
+      <!-- 常用文档 -->
+      <home-doc></home-doc>
     </div>
-    <!-- E header -->
+    <!-- Header E -->
 
-    <!-- S body -->
+    <!-- Body S -->
     <div class="body">
       <HomeDemo />
       <HomeProject />
     </div>
-    <!-- E body -->
+    <!-- Body E -->
 
-    <!-- S footer -->
+    <!-- Footer S -->
     <div v-if="data.footer" class="footer">
       {{ data.footer }}
     </div>
-    <!-- S footer -->
+    <!-- Footer E -->
   </main>
 </template>
 
 <script>
+import HomeSearchBar from './HomeSearchBar.vue'
+import HomeDoc from './HomeDoc.vue'
 import HomeDemo from './HomeDemo.vue'
 import HomeProject from './HomeProject.vue'
-
 export default {
   name: 'Home',
-  components: { HomeDemo, HomeProject },
+  components: { HomeSearchBar, HomeDoc, HomeDemo, HomeProject },
 
   data() {
-    const imgDir = '/assets/img/'
-
-    return {
-      quickLinkList: [
-        {
-          img: `${imgDir}js.png`,
-          title: 'javascript',
-          link: 'https://zh.javascript.info/',
-        },
-        {
-          img: `${imgDir}html5.png`,
-          title: 'html5',
-          link: 'https://developer.mozilla.org/zh-CN/docs/Web/HTML',
-        },
-        {
-          img: `${imgDir}css3.png`,
-          title: 'css3',
-          link: 'https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference#%E9%80%89%E6%8B%A9%E5%99%A8',
-        },
-        {
-          img: `${imgDir}vue.png`,
-          title: 'vue',
-          link: 'https://cn.vuejs.org/',
-        },
-        {
-          img: `${imgDir}js_es6.png`,
-          title: 'ES6 入门教程',
-          link: 'https://es6.ruanyifeng.com/',
-        },
-        {
-          img: `${imgDir}webpack.png`,
-          title: 'webpack',
-          link: 'https://www.webpackjs.com/',
-        },
-      ],
-    }
+    return {}
   },
+
+  created() {},
 
   computed: {
     data() {
@@ -110,62 +73,6 @@ export default {
     background-size: auto;
     background-repeat: no-repeat;
     background: #f9f9f9;
-
-    h1 {
-      position: relative;
-      top: 125px;
-      z-index: 0;
-      margin: 0;
-      color: #f9f9f9;
-      font-size: 50px;
-      text-align: center;
-      text-shadow: 0 -2px 0px #fff, 0 3px 6px #00000042;
-    }
-
-    &::before {
-      content: ' ';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      z-index: 1;
-      display: block;
-      width: 100%;
-    }
-
-    // 快速链接
-    .quick-link {
-      z-index: 2;
-      width: 100%;
-      bottom: 100px;
-      text-align: center;
-      position: absolute;
-
-      a {
-        display: inline-block;
-        width: 50px;
-        height: 50px;
-        margin: 0 15px;
-        background: #fff;
-        line-height: 50px;
-        border-radius: 8px;
-        box-shadow: 0 0 2px 0 #4646462e;
-        transition: all 0.2s ease-out;
-        transition-delay: 0.1s;
-
-        &:hover {
-          transform: translate(0, -6px);
-          box-shadow: 0 3px 2px 0 #00000042, 0 0 2px 0 #4646462e;
-        }
-      }
-
-      img {
-        width: 30px;
-        margin-top: 50%;
-        border-radius: 3px;
-        display: inline-block;
-        transform: translate(0, -50%) rotateZ(0);
-      }
-    }
   }
 
   .body {
