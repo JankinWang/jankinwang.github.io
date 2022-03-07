@@ -1,5 +1,7 @@
 const { createNavAndSidbar } = require('./myConfig.js')
-const { sidebarConfig: notesSidebar, navConfig: notesNav } = createNavAndSidbar('notes')
+const { sidebarConfig: notesSidebar, navConfig: notesNav } = createNavAndSidbar(
+  'notes'
+)
 
 module.exports = {
   title: 'Jankin',

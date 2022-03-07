@@ -12,7 +12,7 @@ const docsDir = path.resolve(__dirname, '../')
  *
  * 生成目录导航和文件侧边栏
  * @param {String} markdownDirName docs目录下存放 Markdown 文件的目录名称
- * @returns {Object} {navConfig,sidebarConfig}
+ * @returns {Array} {navConfig,sidebarConfig}
  */
 function createNavAndSidbar(markdownDirName) {
   const navConfig = []
