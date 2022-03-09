@@ -1,5 +1,5 @@
 <template>
-  <div class="home-xin-guan">
+  <div class="home-xin-guan" v-show="isShow">
     <div class="tag">
       <el-tag size="mini" type="pain">全国</el-tag>
       <time>截至 {{ china.lastUpdateTime }}</time>
@@ -113,6 +113,7 @@ export default {
       china: {},
       area: {},
       chinaLoading: true,
+      isShow: false,
     }
   },
   computed: {
@@ -171,16 +172,18 @@ export default {
     },
   },
 
-  mounted() {
-    getChina().then((data) => {
-      this.china = data
-
-      this.$emit('loadover', true)
-    })
-
-    getChinaArea().then((data) => {
-      this.area = data
-    })
+  created() {
+    getChina()
+      .then((data) => {
+        this.china = data
+      })
+      .then((res) => {
+        getChinaArea().then((data) => {
+          this.area = data
+          this.$emit('loadover', true)
+          this.isShow = true
+        })
+      })
   },
 
   methods: {},
