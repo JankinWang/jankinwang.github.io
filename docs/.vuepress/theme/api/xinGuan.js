@@ -23,7 +23,7 @@ export async function getDataFull() {
     status,
   } = await axios(apiurl)
   if (status === 200) {
-    localStorageCache.set('xinguan', data, 10000)
+    localStorageCache.set('xinguan', data, 600)
     return data
   }
 }

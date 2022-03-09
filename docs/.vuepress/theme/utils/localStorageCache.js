@@ -4,14 +4,14 @@ const localStorageCache = {
    *
    * @param {*} key
    * @param {*} data 数据
-   * @param {number} [maxAge=60000] 缓存时长（秒）
+   * @param {number} [maxAge=60] 缓存时长（秒）
    */
-  set(key, data, maxAge = 60000) {
+  set(key, data, maxAge = 60) {
     key = key + '_cache'
 
     const value = JSON.stringify({
       time: Date.now(),
-      maxAge,
+      maxAge: maxAge * 1000,
       data,
     })
 

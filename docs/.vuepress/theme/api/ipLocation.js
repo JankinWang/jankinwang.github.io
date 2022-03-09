@@ -25,7 +25,7 @@ export default async function ipLocation() {
     },
   })
 
-  localStorageCache.set('ipLocation', data, 10000)
+  localStorageCache.set('ipLocation', data, 600)
 
   return data
 }
