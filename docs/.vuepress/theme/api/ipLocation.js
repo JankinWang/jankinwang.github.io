@@ -1,6 +1,9 @@
 import axios from 'axios'
 import getIp from './getIp'
+import localStorageCache from '@utils/localStorageCache.js'
+
 const apiUrl = 'https://restapi.amap.com/v5/ip'
+
 /**
  * ip 定位
  *
@@ -8,6 +11,11 @@ const apiUrl = 'https://restapi.amap.com/v5/ip'
  * @return {JSON}
  */
 export default async function ipLocation() {
+  const cacheLocation = localStorageCache.get('ipLocation')
+  if (cacheLocation) {
+    return cacheLocation
+  }
+
   const ip = await getIp()
   let { data } = await axios.get(apiUrl, {
     params: {
@@ -16,6 +24,8 @@ export default async function ipLocation() {
       ip,
     },
   })
+
+  localStorageCache.set('ipLocation', data, 10000)
 
   return data
 }
