@@ -11,7 +11,7 @@ const apiurl = 'https://36c7edd4-5acd-4e1c-a193-672f11a3d9f9.bspapp.com/xinguan'
  */
 export async function getDataFull() {
   // 读取缓存
-  let cacheData = localStorageCache.get('xinguan', 10000)
+  let cacheData = localStorageCache.get('xinguan')
   if (cacheData) {
     // 缓存有效
     return cacheData
@@ -23,7 +23,7 @@ export async function getDataFull() {
     status,
   } = await axios(apiurl)
   if (status === 200) {
-    localStorageCache.set('xinguan', data)
+    localStorageCache.set('xinguan', data, 10000)
     return data
   }
 }
