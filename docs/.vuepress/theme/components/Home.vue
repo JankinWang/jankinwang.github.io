@@ -5,11 +5,14 @@
   >
     <!-- Header S -->
     <div class="header">
+      <!-- 新冠疫情信息 -->
+      <home-xin-guan />
+
       <!-- 搜索栏 search bar -->
-      <home-search-bar></home-search-bar>
+      <home-search-bar />
 
       <!-- 常用文档 -->
-      <home-doc></home-doc>
+      <home-doc />
     </div>
     <!-- Header E -->
 
@@ -33,9 +36,17 @@ import HomeSearchBar from './HomeSearchBar.vue'
 import HomeDoc from './HomeDoc.vue'
 import HomeDemo from './HomeDemo.vue'
 import HomeProject from './HomeProject.vue'
+import HomeXinGuan from './HomeXinGuan.vue'
+
 export default {
   name: 'Home',
-  components: { HomeSearchBar, HomeDoc, HomeDemo, HomeProject },
+  components: {
+    HomeSearchBar,
+    HomeDoc,
+    HomeDemo,
+    HomeProject,
+    HomeXinGuan,
+  },
 
   data() {
     return {}

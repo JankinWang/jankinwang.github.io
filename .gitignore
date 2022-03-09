@@ -3,3 +3,5 @@ dist
 docs/notes
 test.sh
 update.sh
+.vscode/launch.json
+package.json
