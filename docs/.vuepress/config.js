@@ -1,3 +1,4 @@
+const path = require('path')
 const { createNavAndSidbar } = require('./myConfig.js')
 const { sidebarConfig: notesSidebar, navConfig: notesNav } = createNavAndSidbar(
   'notes'
@@ -32,6 +33,12 @@ module.exports = {
   plugins: [{ src: '@/plugins/vue-awesome-swiper', mode: 'client' }],
 
   configureWebpack: {
+    resolve: {
+      alias: {
+        '@utils': path.resolve(__dirname, './theme/utils'),
+        '@api': path.resolve(__dirname, './theme/api'),
+      },
+    },
     module: {
       rules: [
         {
