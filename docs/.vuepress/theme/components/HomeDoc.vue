@@ -7,7 +7,7 @@
           <img :src="`${localImgDir}${img}`" :alt="title" :title="title" />
         </a>
       </template>
-      <a href="javascript:void;"> 添加 </a>
+      <!-- <a href="javascript:void;"> 添加 </a> -->
     </div>
   </div>
 </template>
