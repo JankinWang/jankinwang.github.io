@@ -5,14 +5,16 @@
   >
     <!-- Header S -->
     <div class="header">
-      <!-- 新冠疫情信息 -->
-      <home-xin-guan />
+      <div class="center">
+        <!-- 新冠疫情信息 -->
+        <home-xin-guan />
 
-      <!-- 搜索栏 search bar -->
-      <home-search-bar />
+        <!-- 搜索栏 search bar -->
+        <home-search-bar />
 
-      <!-- 常用文档 -->
-      <home-doc />
+        <!-- 常用文档 -->
+        <home-doc />
+      </div>
     </div>
     <!-- Header E -->
 
@@ -83,7 +85,14 @@ export default {
     background-size: auto;
     background-repeat: no-repeat;
     background: #f9f9f9;
-    padding: 5em 0;
+    padding: 3em 0;
+
+    .center {
+      max-width: 720px;
+      margin: 0 auto;
+      position: relative;
+      padding: 0 20px;
+    }
   }
 
   .body {

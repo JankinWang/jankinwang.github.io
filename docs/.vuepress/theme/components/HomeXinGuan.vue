@@ -3,7 +3,7 @@
     <el-popover
       popper-class="home-xinguan-popper"
       placement="bottom"
-      width="400"
+      width="350"
       trigger="click"
     >
       <el-skeleton :loading="!loading" animated>
@@ -80,8 +80,7 @@ export default {
 
 <style lang="stylus">
 .home-xinguan {
-  position: absolute;
-  top: 10px;
-  left: 20px;
+  margin-bottom: 20px;
+  margin-left: 5px;
 }
 </style>
