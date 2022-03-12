@@ -3,7 +3,13 @@
     "baseUrl": "./",
     "paths": {
       "@/*": [
-        "src/*"
+        "docs/.vuepress/*"
+      ],
+      "@utils/*": [
+        "docs/.vuepress/theme/utils/*"
+      ],
+      "@api/*": [
+        "docs/.vuepress/theme/api*"
       ]
     }
   },

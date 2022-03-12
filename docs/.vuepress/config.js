@@ -35,6 +35,7 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
+        '@': path.resolve(__dirname, './'),
         '@utils': path.resolve(__dirname, './theme/utils'),
         '@api': path.resolve(__dirname, './theme/api'),
       },
