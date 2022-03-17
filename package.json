@@ -17,6 +17,8 @@
     "@babel/preset-env": "^7.16.11",
     "babel-loader": "^8.2.3",
     "babel-plugin-component": "^1.1.1",
+    "eslint": "^8.11.0",
+    "eslint-plugin-vue": "^8.5.0",
     "vuepress": "^1.8.2"
   },
   "dependencies": {
