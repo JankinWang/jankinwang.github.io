@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>搜索</title>
+  <script>
+    let global
+    try {
+      global = window
+    } catch (error) {
+      global = globalThis
+    }
+
+    const searchEngines = [
+      {
+        name: '现代 Js 教程',
+        url: 'https://zh.javascript.info/search/?query=%s&type=article',
+      },
+      {
+        name: '掘金',
+        url: 'https://juejin.cn/search?query=%s',
+      },
+      {
+        name: '掘金开发者',
+        url: 'https://so.juejin.cn/search?query=%s&offset=0',
+      },
+      {
+        name: 'Z-library',
+        url: 'https://zh.fr1lib.org/s/%s',
+      },
+      {
+        name: '维基百科',
+        url: 'https://www.wikipedia.org/wiki/%s',
+      },
+    ]
+
+    const Target = {
+      blank: 0,
+      self: 1,
+    }
+
+    function openSearchEngine(index, keyWord, target = 0) {
+      let url = searchEngines[index].url
+      url = url.replace(/%s/, keyWord)
+
+      switch (target) {
+        case Target.blank:
+          global.open(url)
+          break
+        case Target.self:
+          global.location.href = url
+          break
+
+        default:
+          break
+      }
+    }
+
+    function autoOpenSearchEngine() {
+      const href = global.location.href
+      const url = new URL(href),
+        searchParams = url.searchParams
+
+      if (searchParams.has('qw')) {
+        const qw = searchParams.get('qw')
+
+        let engine = 0
+        if (searchParams.has('engine')) {
+          engine = searchParams.get('engine')
+        }
+
+        openSearchEngine(engine, qw, Target.self)
+        return true
+      }
+
+      return false
+    }
+    autoOpenSearchEngine()
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

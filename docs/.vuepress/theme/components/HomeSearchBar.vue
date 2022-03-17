@@ -55,6 +55,8 @@
 <script>
 import mapElementUI from '@utils/element-ui'
 import SearchHistory from '@utils/SearchHistory'
+import { openSearchEngine, searchEngines } from '@utils/searchEngine'
+
 export default {
   components: {
     ...mapElementUI(['ElSelect', 'ElOption', 'ElPopover']),
@@ -63,31 +65,11 @@ export default {
   data() {
     return {
       keyWord: '',
+      // 控制历史记录显示
       historyShow: false,
       searchEngineSelected: 0, // 选中的搜索引擎索引
       // 搜索引擎名单
-      searchEngines: [
-        {
-          name: '现代 Js 教程',
-          url: 'https://zh.javascript.info/search/?query=%s&type=article',
-        },
-        {
-          name: '掘金',
-          url: 'https://juejin.cn/search?query=%s',
-        },
-        {
-          name: '掘金开发者',
-          url: 'https://so.juejin.cn/search?query=%s&offset=0',
-        },
-        {
-          name: 'Z-library',
-          url: 'https://zh.fr1lib.org/s/%s',
-        },
-        {
-          name: '维基百科',
-          url: 'https://www.wikipedia.org/wiki/%s',
-        },
-      ],
+      searchEngines: searchEngines,
     }
   },
 
@@ -133,12 +115,11 @@ export default {
 
   methods: {
     onSearch() {
-      let url = this.searchEngines[this.searchEngineSelected].url
-      url = url.replace(/%s/, this.keyWord)
-      window.open(url)
+      openSearchEngine(this.searchEngineSelected, this.keyWord)
       // 追加搜索记录
       this._SearchHistory.setHistory(this.keyWord)
     },
+
     onClickHistory(text) {
       this.keyWord = text
 

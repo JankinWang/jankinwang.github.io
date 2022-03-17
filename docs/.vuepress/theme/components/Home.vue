@@ -54,8 +54,6 @@ export default {
     return {}
   },
 
-  created() {},
-
   computed: {
     data() {
       return this.$page.frontmatter
@@ -68,6 +66,8 @@ export default {
       }
     },
   },
+
+  mounted() {},
 }
 </script>
 
