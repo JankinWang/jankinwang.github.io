@@ -15,7 +15,7 @@ const components = {
  * @return {Boolean}
  */
 function hasCompt(name) {
-  return components.hasOwnProperty(name)
+  return Object.prototype.hasOwnProperty.call(components, name);
 }
 
 export default function mapElementUI(name) {

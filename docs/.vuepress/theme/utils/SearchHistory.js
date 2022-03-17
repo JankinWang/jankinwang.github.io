@@ -18,7 +18,7 @@ class SearchHistory {
   // 分词
   fenci(text) {
     text = text.trim()
-    return text.split(/[\,\，\s]/)
+    return text.split(/[,，\s]/)
   }
 
   // 标记关键字
