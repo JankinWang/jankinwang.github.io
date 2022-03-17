@@ -5,7 +5,7 @@
       <template v-for="(item, index) in demos">
         <div class="column col-4 col-1 col-2 space10" :key="index">
           <a class="demo-item" :href="item.link" target="_blank">
-            <h4>{{ item.title }} <Iconfont name="icon-link" size="15px" /></h4>
+            <h4>{{ item.title }} <IcontFont name="icon-link" size="15px" /></h4>
 
             <p class="tags">
               <span v-for="tag in item.tags" :key="tag">{{ tag }}</span>

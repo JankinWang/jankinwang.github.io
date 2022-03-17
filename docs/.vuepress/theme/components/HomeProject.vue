@@ -2,7 +2,11 @@
   <div class="home-project">
     <h2>项目</h2>
     <div class="content">
-      <div class="column col-4 space10" v-for="(pro, index) in projects" :key="index">
+      <div
+        class="column col-4 space10"
+        v-for="(pro, index) in projects"
+        :key="index"
+      >
         <a class="project-item">
           <div class="imgs" @click="heandelPreviewImage(index)">
             <img :src="pro.images[0]" :alt="pro.title" />
@@ -18,7 +22,7 @@
             <p class="desc">{{ pro.desc }}</p>
 
             <p class="links">
-              <Iconfont name="icon-link" size="15px" />
+              <IcontFont name="icon-link" size="15px" />
               <a
                 target="_blank"
                 v-for="({ link, label }, index) in pro.links"
@@ -38,10 +42,7 @@
 
 <script>
 export default {
-  name: '',
-
   data() {
-
     const projectImgs = '/assets/img/project'
     return {
       projects: [
@@ -108,7 +109,7 @@ export default {
             {
               label: '手机版',
               link: 'http://csm.heartverse.net/',
-            }
+            },
           ],
           repository: [],
         },
@@ -129,10 +130,10 @@ export default {
   methods: {
     // 显示图片预览
     heandelPreviewImage(index) {
-      this.imagePreviewIndex = index;
+      this.imagePreviewIndex = index
       this.$refs['image-preview'].showPreview()
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -187,13 +188,10 @@ export default {
         left: 0;
         right: 0;
         z-index: 1;
-
         color: #d0d0d0;
         background: #0000006e;
-
         text-align: center;
         line-height: 160px;
-
         opacity: 0;
         cursor: pointer;
         transition: all 0.2s;
