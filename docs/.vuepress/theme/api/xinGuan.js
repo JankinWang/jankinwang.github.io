@@ -30,8 +30,8 @@ export async function getDataFull() {
 
 // 中国全国数据
 export async function getChina() {
-  const { chinaTotal, lastUpdateTime } = await getDataFull()
-  return Object.assign({ lastUpdateTime }, chinaTotal)
+  const { chinaTotal, lastUpdateTime, chinaDayList } = await getDataFull()
+  return Object.assign({ lastUpdateTime, chinaDayList }, chinaTotal)
 }
 
 // 中国地区数据

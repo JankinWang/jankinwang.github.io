@@ -95,6 +95,8 @@
         <span style="color: #339d0e">{{ realArea.totalHeal }}</span>
       </div>
     </div>
+
+    <VueEcharts :option="areaLine" style="padding: 0 15px"></VueEcharts>
   </div>
 </template>
 
@@ -170,18 +172,96 @@ export default {
         existConfirm: total.confirm - total.dead - total.heal,
       }
     },
+
+    // 区域数据折线图
+    areaLine() {
+      if (!this.china.chinaDayList) return {}
+      const chinaDayList = this.china.chinaDayList
+      const length = chinaDayList.length
+      let xAxisData = []
+      let existConfirmData = []
+      let confirmData = []
+
+      for (let i = 0; i < 7; i++) {
+        let index = length - i - 1
+        let {
+          date,
+          total: { confirm: totalConfirm, heal, dead },
+          today: { confirm, storeConfirm },
+        } = chinaDayList[index]
+
+        const datearr = date.split('-')
+
+        xAxisData.unshift(`${datearr[1]}/${datearr[2]}`)
+        confirmData.unshift(confirm)
+        existConfirmData.unshift(totalConfirm - heal - dead)
+      }
+
+      const option = {
+        title: {
+          text: '增长态势 (全国)',
+          textStyle: {
+            fontSize: 15,
+            fontFamily: 'Microsoft YaHei',
+            fontWeight: 'normal',
+          },
+          padding: [5, 5, 5, 0],
+        },
+        tooltip: {
+          trigger: 'axis',
+        },
+        legend: {
+          left: 'right',
+          data: ['现有确诊', '新增确诊'],
+        },
+        grid: {
+          left: '0px',
+          right: '4%',
+          bottom: '3%',
+          top: '40px',
+          containLabel: true,
+        },
+        xAxis: {
+          type: 'category',
+          data: xAxisData,
+        },
+        yAxis: {
+          type: 'value',
+        },
+        series: [
+          {
+            name: '现有确诊',
+            data: existConfirmData,
+            type: 'line',
+            smooth: true,
+            label: true,
+            color: 'rgb(206, 0, 0)',
+          },
+          {
+            name: '新增确诊',
+            data: confirmData,
+            type: 'line',
+            smooth: true,
+            label: true,
+            color: '#f00',
+          },
+        ],
+      }
+      return option
+    },
   },
 
   created() {
     getChina()
       .then((data) => {
+        this.$emit('loadover', true)
+        this.isShow = true
+
         this.china = data
       })
       .then((res) => {
         getChinaArea().then((data) => {
           this.area = data
-          this.$emit('loadover', true)
-          this.isShow = true
         })
       })
   },
