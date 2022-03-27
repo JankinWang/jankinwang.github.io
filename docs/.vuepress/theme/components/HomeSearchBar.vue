@@ -161,7 +161,7 @@ export default {
   overflow: hidden;
   min-width: 500px;
   margin: 0 auto;
-  border: #e7e7e7 1px solid;
+  outline: #f9f9f9 1px solid;
   border-radius: 1em;
   background-color: #fff;
 

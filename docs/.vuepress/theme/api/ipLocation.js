@@ -12,6 +12,7 @@ const apiUrl = 'https://restapi.amap.com/v5/ip'
  */
 export default async function ipLocation() {
   const cacheLocation = localStorageCache.get('ipLocation')
+  // 缓存是否有效
   if (cacheLocation) {
     return cacheLocation
   }

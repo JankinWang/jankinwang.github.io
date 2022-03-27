@@ -4,7 +4,7 @@
     <div class="demo-table">
       <template v-for="(item, index) in demos">
         <div class="column col-4 col-1 col-2 space10" :key="index">
-          <a class="demo-item" :href="item.link" target="_blank">
+          <a class="demo-item link-block" :href="item.link" target="_blank">
             <h4>{{ item.title }} <IcontFont name="icon-link" size="15px" /></h4>
 
             <p class="tags">
@@ -96,10 +96,6 @@ export default {
 
 <style lang="stylus">
 .web-demo {
-  h2 {
-    padding-top: 1rem;
-  }
-
   a.demo-item {
     width: 100%;
     color: #333;
@@ -107,14 +103,8 @@ export default {
     border-radius: 5px;
     display: inline-block;
     box-sizing: border-box;
-    box-shadow: 0 2px 5px 0 #33333324;
-    transition: all 0.2s ease-out;
-    transition-delay: 0.1s;
 
     &:hover {
-      transform: translate(0, -5px);
-      box-shadow: 0 4px 8px 0 #33333324;
-
       h4 {
         color: $accentColor;
 

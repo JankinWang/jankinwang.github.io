@@ -182,20 +182,21 @@ export default {
       let existConfirmData = []
       let confirmData = []
 
-      for (let i = 0; i < 7; i++) {
-        let index = length - i - 1
+      // 取出最后7天数据
+      const last7Days = chinaDayList.slice(-7)
+
+      last7Days.forEach((oneDay) => {
         let {
           date,
           total: { confirm: totalConfirm, heal, dead },
-          today: { confirm, storeConfirm },
-        } = chinaDayList[index]
+          today: { confirm },
+        } = oneDay
 
-        const datearr = date.split('-')
-
-        xAxisData.unshift(`${datearr[1]}/${datearr[2]}`)
-        confirmData.unshift(confirm)
-        existConfirmData.unshift(totalConfirm - heal - dead)
-      }
+        const dateParse = date.split('-')
+        xAxisData.push(`${dateParse[1]}/${dateParse[2]}`)
+        confirmData.push(confirm)
+        existConfirmData.push(totalConfirm - heal - dead)
+      })
 
       const option = {
         title: {

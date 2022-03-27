@@ -139,10 +139,6 @@ export default {
 
 <style lang="stylus">
 .home-project {
-  h2 {
-    padding-top: 1rem;
-  }
-
   .project-item {
     color: #333;
     display: block;

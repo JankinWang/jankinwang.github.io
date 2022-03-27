@@ -5,6 +5,42 @@
   box-sizing: border-box;
 }
 
+.navbar .logo {
+  border-radius: 2rem;
+}
+
+.link-block {
+  padding: 5px;
+  display: inline-block;
+  border-radius: $borderRadius;
+  box-sizing: border-box;
+  box-shadow: 2px 4px 10px 0 #e7e7e7;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+
+  &:hover {
+    transform: translate(0, -3px);
+    box-shadow: 0px 0px 0px 0 #e7e7e7, inset 15px 15px 30px #f1f1f1, inset -18px -18px 30px #fff;
+  }
+}
+
+.text-overflow-1line {
+  overflow: hidden;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* 最多允许两行 */
+  -webkit-box-orient: vertical;
+}
+
+.text-overflow-2line {
+  overflow: hidden;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* 最多允许两行 */
+  -webkit-box-orient: vertical;
+}
+
 .column {
   display: inline-block;
 

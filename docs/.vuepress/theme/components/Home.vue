@@ -4,7 +4,7 @@
     :aria-labelledby="data.heroText !== null ? 'main-title' : null"
   >
     <!-- Header S -->
-    <div class="header">
+    <div class="header Banner_effect__1L7Jk">
       <div class="center">
         <!-- 新冠疫情信息 -->
         <home-xin-guan />
@@ -20,6 +20,7 @@
 
     <!-- Body S -->
     <div class="body">
+      <HomeBookmark />
       <HomeDemo />
       <HomeProject />
     </div>
@@ -39,6 +40,7 @@ import HomeDoc from './HomeDoc.vue'
 import HomeDemo from './HomeDemo.vue'
 import HomeProject from './HomeProject.vue'
 import HomeXinGuan from './HomeXinGuan.vue'
+import HomeBookmark from './HomeBookmark.vue'
 
 export default {
   name: 'Home',
@@ -48,6 +50,7 @@ export default {
     HomeDemo,
     HomeProject,
     HomeXinGuan,
+    HomeBookmark,
   },
 
   data() {
@@ -81,11 +84,8 @@ export default {
     width: 100%;
     overflow: hidden;
     position: relative;
-    background-image: url('/assets/img/back.jpeg');
-    background-size: auto;
-    background-repeat: no-repeat;
-    background: #f9f9f9;
-    padding: 3em 0;
+    padding: 5em 0;
+    background-image: linear-gradient(45deg, rgb(90, 54, 148) 0%, rgb(19, 189, 206) 33%, rgb(0, 148, 217) 66%, rgb(111, 199, 181) 100%);
 
     .center {
       max-width: 720px;
@@ -156,6 +156,24 @@ export default {
         font-size: 1.25rem;
       }
     }
+  }
+}
+
+.Banner_effect__1L7Jk {
+  background-size: 400%;
+  background-position: 0 100%;
+  -webkit-animation: Banner_gradient__1iGeC 7.5s ease-in-out infinite;
+  animation: Banner_gradient__1iGeC 7.5s ease-in-out infinite;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+@keyframes Banner_gradient__1iGeC {
+  50% {
+    background-position: 100% 0;
   }
 }
 </style>

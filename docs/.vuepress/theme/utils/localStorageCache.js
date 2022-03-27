@@ -36,11 +36,17 @@ const localStorageCache = {
     let ex = data.time + data.maxAge
 
     if (data.time && ex < Date.now()) {
+      // 超时
       localStorage.removeItem(key)
       return null
     } else {
       return data.data
     }
+  },
+
+  remove(key) {
+    key = key + '_cache'
+    return localStorage.removeItem(key)
   },
 }
 

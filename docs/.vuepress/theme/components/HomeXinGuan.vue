@@ -41,21 +41,37 @@
         @loadover="(event) => (loading = event)"
       />
 
-      <el-link :underline="false" slot="reference" @click="onOpen"
+      <el-link
+        :underline="false"
+        slot="reference"
+        class="popover__reference"
+        @click="onOpen"
         >新冠疫情信息
         <i class="el-icon-arrow-down el-icon--right"></i>
       </el-link>
     </el-popover>
+
+    <el-divider direction="vertical"></el-divider>
+    <!-- 天气 -->
+    <weather />
   </div>
 </template>
 
 <script>
-import { Popover, Button, Skeleton, SkeletonItem, Link } from 'element-ui'
+import {
+  Popover,
+  Button,
+  Skeleton,
+  SkeletonItem,
+  Link,
+  Divider,
+} from 'element-ui'
 export default {
   components: {
     [Link.name]: Link,
     [Popover.name]: Popover,
     [Button.name]: Button,
+    [Divider.name]: Divider,
     [Skeleton.name]: Skeleton,
     [SkeletonItem.name]: SkeletonItem,
     HomeXinGuanTotal: () =>
@@ -82,5 +98,13 @@ export default {
 .home-xinguan {
   margin-bottom: 20px;
   margin-left: 5px;
+
+  .popover__reference {
+    color: $textColorInverse;
+
+    &:hover {
+      color: #ffffff59;
+    }
+  }
 }
 </style>
