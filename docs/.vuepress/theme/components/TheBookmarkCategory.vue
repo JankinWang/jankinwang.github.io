@@ -3,7 +3,9 @@
     <!-- 分类名称 -->
     <div class="category__name">
       <span>{{ relCategory }}</span>
-      <div class="right">
+
+      <!-- 操作区 -->
+      <div v-editable class="right">
         <el-popover
           placement="bottom"
           width="300"
@@ -16,7 +18,6 @@
             @cancel="showCreateForm = false"
           />
           <el-link
-            v-editable
             slot="reference"
             :underline="false"
             class="control-btn"
@@ -40,15 +41,19 @@
           target="_blank"
           class="category__children__item link-block"
         >
+          <!-- favicon -->
           <el-image class="favicon" :src="child.favicon[0].href" fit="cover">
-            <div slot="error" class="image-slot--error">
+            <div slot="error" class="image-slot image-slot--error">
               {{ child.name | imgErrText }}
             </div>
           </el-image>
+
+          <!-- 文本信息 -->
           <div class="text-info">
             <p class="name text-overflow-1line">
               {{ child.name || child.title }}
             </p>
+
             <p
               class="description text-overflow-1line"
               :title="child.description"
@@ -58,13 +63,10 @@
           </div>
 
           <!-- 操控区 -->
-          <div class="control-area">
-            <el-link v-editable :underline="false" class="control-btn">
-              编辑
-            </el-link>
+          <div v-editable class="control-area">
+            <el-link :underline="false" class="control-btn"> 编辑 </el-link>
             <small>|</small>
             <el-link
-              v-editable
               :underline="false"
               class="control-btn"
               @click.prevent="deleteBookmark(child.id, index)"
