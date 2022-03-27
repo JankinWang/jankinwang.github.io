@@ -38,7 +38,7 @@ export default {
   },
 
   // hook
-  created() {
+  mounted() {
     this.weather = weather
     this.refresh()
   },

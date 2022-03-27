@@ -26,7 +26,7 @@ export default {
   },
   computed: {},
 
-  created() {
+  mounted() {
     this.getGroup = getGroup
     this.getBookmark()
   },
