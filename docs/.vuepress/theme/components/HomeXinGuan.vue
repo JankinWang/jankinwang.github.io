@@ -6,6 +6,7 @@
       width="350"
       trigger="click"
     >
+      <!-- 骨架屏 -->
       <el-skeleton :loading="!loading" animated>
         <template slot="template">
           <div
@@ -36,11 +37,13 @@
         </template>
       </el-skeleton>
 
+      <!-- 新冠统计信息 -->
       <home-xin-guan-total
         v-if="opened"
         @loadover="(event) => (loading = event)"
       />
 
+      <!-- 触发 popover-->
       <el-link
         :underline="false"
         slot="reference"
