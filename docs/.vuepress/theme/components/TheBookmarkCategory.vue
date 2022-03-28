@@ -32,7 +32,7 @@
       </div>
     </div>
 
-    <!-- 标签表 -->
+    <!-- 书签列表 -->
     <div class="category__children">
       <template v-for="(child, index) of children">
         <a
@@ -56,9 +56,10 @@
 
             <p
               class="description text-overflow-1line"
+              :class="{ 'description--null': !child.description }"
               :title="child.description"
             >
-              {{ child.description }}
+              {{ child.description | descriptionNull }}
             </p>
           </div>
 
@@ -84,6 +85,8 @@
 import mapElementUI from '@utils/element-ui'
 import { deleteById, create } from '@api/bookmark'
 import TheBookmarkCategoryCreate from './TheBookmarkCategoryCreate'
+
+// bookmark 一个分类的内容
 export default {
   name: 'TheBookmarkCategory',
 
@@ -104,19 +107,28 @@ export default {
   },
 
   filters: {
+    // 图片加载失败,用第一个字符作为icon
     imgErrText: function (value) {
       const text = String(value)[0]
       return text.toUpperCase()
     },
+    // descriptio 为空时的替换字符
+    descriptionNull: function (value) {
+      const text = String(value)
+      return text.trim() || '没有描述信息'
+    },
   },
 
   props: {
+    // 分类名
     category: { type: String, default: 'default' },
+    // 此分类下的书签(bookmark)
     children: { type: Array, default: () => [] },
   },
 
   data() {
     return {
+      // 控制显示添加新书签表单
       showCreateForm: false,
     }
   },
@@ -210,14 +222,16 @@ export default {
       font-weight: bold;
     }
 
-    p {
+    .description--null {
+      color: $textColorGray;
+      user-select: none;
+    }
+
+    .text-info > p {
       margin: 0;
     }
 
-    &:hover .control-area {
-      display: block;
-    }
-
+    /* 可编辑状态下的控制区样式 */
     .control-area {
       color: $textColorInverse;
       border-radius: 0 0 0 5px;
@@ -236,6 +250,10 @@ export default {
           color: #409EFF;
         }
       }
+    }
+
+    &:hover .control-area {
+      display: block;
     }
   }
 }
