@@ -8,6 +8,10 @@ import {
   Icon,
   Link,
   Image,
+
+  // 骨架屏
+  Skeleton,
+  SkeletonItem,
 } from 'element-ui'
 
 const components = {
@@ -20,6 +24,8 @@ const components = {
   [Icon.name]: Icon,
   [Link.name]: Link,
   [Image.name]: Image,
+  [Skeleton.name]: Skeleton,
+  [SkeletonItem.name]: SkeletonItem,
 }
 /**
  * 组件是否存在
@@ -30,7 +36,6 @@ const components = {
 function hasCompt(name) {
   return Object.prototype.hasOwnProperty.call(components, name)
 }
-
 /**
  *
  *
