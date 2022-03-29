@@ -42,7 +42,11 @@
           class="category__children__item link-block"
         >
           <!-- favicon -->
-          <el-image class="favicon" :src="child.favicon[0].href" fit="cover">
+          <el-image
+            class="favicon"
+            :src="child.favicon | pickFavicon"
+            fit="cover"
+          >
             <div slot="error" class="image-slot image-slot--error">
               {{ child.name | imgErrText }}
             </div>
@@ -56,7 +60,9 @@
 
             <p
               class="description text-overflow-1line"
-              :class="{ 'description--null': !child.description }"
+              :class="{
+                'description--null': !child.description,
+              }"
               :title="child.description"
             >
               {{ child.description | descriptionNull }}
@@ -112,6 +118,11 @@ export default {
       const text = String(value)[0]
       return text.toUpperCase()
     },
+    // 决定使用的icon
+    pickFavicon(favicon) {
+      if (favicon.length <= 0) return ''
+      return favicon[0].href
+    },
     // descriptio 为空时的替换字符
     descriptionNull: function (value) {
       const text = String(value)
@@ -148,9 +159,8 @@ export default {
 
     // 创建并添加书签
     async createBookmark(param) {
-      console.log(param)
       const data = await create(param)
-      console.log(data)
+
       this.showCreateForm = false
     },
   },
