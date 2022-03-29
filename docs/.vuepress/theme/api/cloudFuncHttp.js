@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { Message } from 'element-ui'
 import localStorageCache from '@utils/localStorageCache'
 
 let httpClient = axios.create({
@@ -23,10 +24,26 @@ httpClient.interceptors.response.use(
   // success
   function(response) {
     const { code, msg, data } = response.data
-    // console.table({ code, msg })
 
     if (code === 500) {
+      // 错误
+      Message({
+        message: String(msg),
+        type: 'error',
+      })
       return Promise.reject({ code, msg, data })
+    } else if (code === 800) {
+      // 警告
+      Message({
+        message: String(msg),
+        type: 'warning',
+      })
+    } else {
+      // 成功
+      Message({
+        message: String(msg),
+        type: 'success',
+      })
     }
 
     return data
