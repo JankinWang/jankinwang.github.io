@@ -23,6 +23,7 @@ httpClient.interceptors.request.use(
 httpClient.interceptors.response.use(
   // success
   function(response) {
+    const method = response.config.method.toLowerCase()
     const { code, msg, data } = response.data
 
     if (code === 500) {
@@ -38,7 +39,7 @@ httpClient.interceptors.response.use(
         message: String(msg),
         type: 'warning',
       })
-    } else {
+    } else if (code === 200 && method !== 'get') {
       // 成功
       Message({
         message: String(msg),
