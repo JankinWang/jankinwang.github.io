@@ -20,15 +20,20 @@
 
     <!-- Body S -->
     <div class="body">
-      <HomeBookmark />
-      <HomeDemo />
-      <HomeProject />
+      <HomeBookmark class="body__item" />
+      <HomeDemo class="body__item" />
+      <HomeProject class="body__item" />
     </div>
     <!-- Body E -->
 
     <!-- Footer S -->
     <div v-if="data.footer" class="footer">
       {{ data.footer }}
+      <p>
+        <a href="https://beian.miit.gov.cn/" class="el-link"
+          >冀ICP备19012408号-2</a
+        >
+      </p>
     </div>
     <!-- Footer E -->
   </main>
@@ -98,6 +103,13 @@ export default {
   .body {
     max-width: 960px;
     margin: 0 auto;
+
+    .body__item {
+      h2 {
+        font-size: 1.2rem;
+        margin-top: 2rem;
+      }
+    }
   }
 
   .footer {

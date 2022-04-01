@@ -1,5 +1,5 @@
 ---
 home: true
 # navbar: false
-footer: MIT Licensed | Copyright © 2021-present Jankin
+footer: MIT Licensed | Copyright © 2022-present Jankin
 ---

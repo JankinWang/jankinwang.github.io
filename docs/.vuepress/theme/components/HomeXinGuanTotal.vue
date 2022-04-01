@@ -96,6 +96,8 @@
       </div>
     </div>
 
+    <!-- 疫情增长态势图 -->
+
     <VueEcharts :option="areaLine" style="padding: 0 15px"></VueEcharts>
   </div>
 </template>
