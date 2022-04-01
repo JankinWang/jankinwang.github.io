@@ -59,11 +59,23 @@ export default {
     }
   },
 
+  beforeDestroy() {
+    this.destroyChart()
+  },
+
   methods: {
+    destroyChart() {
+      this.chart.clear()
+      this.chart.dispose()
+      this.chart = null
+      this.$el.innerHTML = ''
+    },
     init() {
-      this.$nextTick(() => {
+      // width:auto 时需要等到浏览器计算出容器的实际宽度
+      requestAnimationFrame(() => {
         const main = this.$el
         this.chart = echarts.init(main)
+        this.isinit = true
 
         if (this.type === 'map') {
           this.registerMap()
@@ -72,6 +84,7 @@ export default {
         }
       })
     },
+
     setOption() {
       this.chart.setOption(this.option)
     },
@@ -88,15 +101,11 @@ export default {
       }
     },
   },
-
-  beforeDestroy() {
-    this.chart = null
-  },
 }
 </script>
 
 <style>
 .v-chart {
-  height: 400px;
+  min-height: 200px;
 }
 </style>
