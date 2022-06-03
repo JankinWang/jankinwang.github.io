@@ -97,7 +97,6 @@
     </div>
 
     <!-- 疫情增长态势图 -->
-
     <VueEcharts :option="areaLine" style="padding: 0 15px"></VueEcharts>
   </div>
 </template>
@@ -259,7 +258,6 @@ export default {
       .then((data) => {
         this.$emit('loadover', true)
         this.isShow = true
-
         this.china = data
       })
       .then((res) => {

@@ -37,7 +37,7 @@
         </template>
       </el-skeleton>
 
-      <!-- 新冠统计信息 -->
+      <!-- 新冠统计图 -->
       <home-xin-guan-total
         v-if="opened"
         @loadover="(event) => (loading = event)"
