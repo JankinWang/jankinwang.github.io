@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[14],{919:function(n,o,i){"use strict";i.r(o);i(70);var e={functional:!0,render:function(n,o){var i=o.props,e=i.name,r=i.size,t=void 0===r?"16px":r,l=i.color;return n("i",{class:["iconfont",e],style:{color:void 0===l?"inherit":l,fontSize:t}})}},r=i(48),t=Object(r.a)(e,void 0,void 0,!1,null,null,null);o.default=t.exports}}]);
