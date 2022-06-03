@@ -57,7 +57,9 @@ httpClient.interceptors.response.use(
   }
 )
 
+// 扩展方法
 httpClient = Object.create(httpClient)
+// 带缓存 get 方法
 httpClient.getWithCache = async function(url, config, refresh = false) {
   const key = config.cacheKey,
     maxAge = config.cacheAge || 100
