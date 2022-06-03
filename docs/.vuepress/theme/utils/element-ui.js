@@ -8,6 +8,8 @@ import {
   Icon,
   Link,
   Image,
+  Collapse,
+  CollapseItem,
 
   // 骨架屏
   Skeleton,
@@ -26,6 +28,8 @@ const components = {
   [Image.name]: Image,
   [Skeleton.name]: Skeleton,
   [SkeletonItem.name]: SkeletonItem,
+  [Collapse.name]: Collapse,
+  [CollapseItem.name]: CollapseItem,
 }
 /**
  * 组件是否存在
