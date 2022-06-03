@@ -1,7 +1,7 @@
 import axios from 'axios'
 import localStorageCache from '../utils/localStorageCache.js'
 import ipLocation from './ipLocation'
-const apiurl = 'https://36c7edd4-5acd-4e1c-a193-672f11a3d9f9.bspapp.com/xinguan'
+const apiurl = 'https://8baf1136-b2e3-4a81-afc2-bc969b7560a5.bspapp.com/xinGuan'
 
 /**
  * 获取完整的新冠数据
@@ -34,9 +34,10 @@ export async function getChina() {
   return Object.assign({ lastUpdateTime, chinaDayList }, chinaTotal)
 }
 
-// 中国地区数据
+// 中国当前地区数据
 export async function getChinaArea() {
   const { areaTree } = await getDataFull()
+  // 当前定位
   const { province, city } = await ipLocation()
   const chinaData = areaTree[2]
 
